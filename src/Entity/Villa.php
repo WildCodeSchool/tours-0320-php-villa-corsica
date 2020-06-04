@@ -74,9 +74,15 @@ class Villa
      */
     private $images;
 
+    /**
+     * @ORM\OneToMany(targetEntity=LivreDor::class, mappedBy="villa", orphanRemoval=true)
+     */
+    private $livreDors;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->livreDors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -229,6 +235,37 @@ class Villa
             // set the owning side to null (unless already changed)
             if ($image->getVilla() === $this) {
                 $image->setVilla(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LivreDor[]
+     */
+    public function getLivreDors(): Collection
+    {
+        return $this->livreDors;
+    }
+
+    public function addLivreDor(LivreDor $livreDor): self
+    {
+        if (!$this->livreDors->contains($livreDor)) {
+            $this->livreDors[] = $livreDor;
+            $livreDor->setVilla($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLivreDor(LivreDor $livreDor): self
+    {
+        if ($this->livreDors->contains($livreDor)) {
+            $this->livreDors->removeElement($livreDor);
+            // set the owning side to null (unless already changed)
+            if ($livreDor->getVilla() === $this) {
+                $livreDor->setVilla(null);
             }
         }
 
