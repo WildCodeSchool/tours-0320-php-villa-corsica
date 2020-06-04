@@ -10,37 +10,46 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     background-color: $secondary;
 }
+
 a {
     font-family: 'snellregular';
     color: $warm-color;
 }
+
 .logo{
     background-color: #6C8F6E;
 }
+
 .logo img{
     height: 150px;
     padding-left: 40%;
 }
+
 ul li{
     font-family: 'snellregular';
     font-size: 40px;
 
 }
+
 .big_img > img{
     width: 100%;
     margin-top: 0;
     height: 500px;
 }
+
 ul li a:hover{
     color: #f5b95a;
 }
+
 @media only screen and (max-width: 600px) {
     ul li {
-      font-size: 25px;
+        font-size: 25px;
     }
+
     .logo img{
         padding-left: 20%;
     }
