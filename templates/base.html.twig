@@ -8,7 +8,35 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+  {% block body %}
+  <div class="logo">
+     <img src="{{ asset('build/logo_2.png') }}"  alt="exemple"/>
+   </div>
+<header>
+<nav>
+    <ul class="nav justify-content-center bg-primary">
+       <li class="nav-item active">
+        <a class="nav-link" href="#">Villas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Location</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Réservation</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" href="#">Loisirs</a>
+      </li> <li class="nav-item active">
+        <a class="nav-link active" href="#">Livre d'or</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

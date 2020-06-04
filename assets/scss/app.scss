@@ -1,9 +1,60 @@
 @import "vars";
+@import "~bootstrap/scss/bootstrap";
+@font-face {
+    font-family: 'snellregular';
+    src: url('../fonts/snellbt-regular-webfont.eot');
+    src: url('../fonts/snellbt-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/snellbt-regular-webfont.woff2') format('woff2'),
+         url('../fonts/snellbt-regular-webfont.woff') format('woff'),
+         url('../fonts/snellbt-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 body {
-    background-color: $secondary-color;
+    background-color: $secondary;
 }
 
 a {
+    font-family: 'snellregular';
     color: $warm-color;
 }
+.logo{
+    background-color: #6C8F6E;
+}
+.logo img{
+    height: 150px;
+    padding-left: 40%;
+}
+ul li{
+ font-family: 'snellregular';
+font-size: 40px;
+
+}
+.big_img > img{
+    width: 100%;
+    margin-top: 0;
+height: 500px;
+}
+
+ul li a:hover{
+    color: #f5b95a;
+}
+
+@media only screen and (max-width: 600px) {
+    ul li {
+      font-size: 25px;
+    }
+    .logo img{
+        padding-left: 20%;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .logo img{
+        padding-left: 29%;
+    }
+
+}
+
+
