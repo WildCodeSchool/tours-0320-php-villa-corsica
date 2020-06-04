@@ -9,9 +9,8 @@
     </head>
     <body>
      <div class="logo">
-     <img src="{{ asset('build/logo.png') }}"  alt="exemple"/>
+     <img src="{{ asset('bulid/logo.png') }}"  alt="exemple"/>
    </div>
-
 <nav>
     <ul class="nav justify-content-center bg-primary">
        <li class="nav-item active">
@@ -34,9 +33,7 @@
     </ul>
   </div>
 </nav>
-
- {% block body %}
- 
+{% block body %}
 {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
