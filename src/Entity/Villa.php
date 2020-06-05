@@ -65,18 +65,18 @@ class Villa
     private $priceFrom;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $minimumStay;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="Villa")
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="villa", orphanRemoval=true)
      */
-    private $images;
+    private $pictures;
 
     public function __construct()
     {
-        $this->images = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -197,7 +197,7 @@ class Villa
         return $this->minimumStay;
     }
 
-    public function setMinimumStay(?int $minimumStay): self
+    public function setMinimumStay(int $minimumStay): self
     {
         $this->minimumStay = $minimumStay;
 
@@ -205,30 +205,30 @@ class Villa
     }
 
     /**
-     * @return Collection|Image[]
+     * @return Collection|Picture[]
      */
-    public function getImages(): Collection
+    public function getPictures(): Collection
     {
-        return $this->images;
+        return $this->pictures;
     }
 
-    public function addImage(Image $image): self
+    public function addPicture(Picture $picture): self
     {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setVilla($this);
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setVilla($this);
         }
 
         return $this;
     }
 
-    public function removeImage(Image $image): self
+    public function removePicture(Picture $picture): self
     {
-        if ($this->images->contains($image)) {
-            $this->images->removeElement($image);
+        if ($this->pictures->contains($picture)) {
+            $this->pictures->removeElement($picture);
             // set the owning side to null (unless already changed)
-            if ($image->getVilla() === $this) {
-                $image->setVilla(null);
+            if ($picture->getVilla() === $this) {
+                $picture->setVilla(null);
             }
         }
 

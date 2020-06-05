@@ -21,7 +21,7 @@ class Admin
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $account;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,14 +33,14 @@ class Admin
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getAccount(): ?string
     {
-        return $this->name;
+        return $this->account;
     }
 
-    public function setName(string $name): self
+    public function setAccount(string $account): self
     {
-        $this->name = $name;
+        $this->account = $account;
 
         return $this;
     }

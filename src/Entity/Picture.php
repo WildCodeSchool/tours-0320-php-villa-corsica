@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ImageRepository;
+use App\Repository\PictureRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ImageRepository::class)
+ * @ORM\Entity(repositoryClass=PictureRepository::class)
  */
-class Image
+class Picture
 {
     /**
      * @ORM\Id()
@@ -23,9 +23,10 @@ class Image
     private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Villa::class, inversedBy="images")
+     * @ORM\ManyToOne(targetEntity=Villa::class, inversedBy="pictures")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $Villa;
+    private $villa;
 
     public function getId(): ?int
     {
@@ -37,7 +38,7 @@ class Image
         return $this->photo;
     }
 
-    public function setPhoto(?string $photo): self
+    public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
 
@@ -46,12 +47,12 @@ class Image
 
     public function getVilla(): ?Villa
     {
-        return $this->Villa;
+        return $this->villa;
     }
 
-    public function setVilla(?Villa $Villa): self
+    public function setVilla(?Villa $villa): self
     {
-        $this->Villa = $Villa;
+        $this->villa = $villa;
 
         return $this;
     }

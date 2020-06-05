@@ -28,7 +28,7 @@ class GoldenBook
     private $departureDate;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=400)
      */
     private $commentary;
 
