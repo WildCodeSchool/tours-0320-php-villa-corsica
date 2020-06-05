@@ -48,6 +48,7 @@ ul li a:hover{
     ul li {
         font-size: 25px;
     }
+
     .logo img{
         padding-left: 20%;
     }
@@ -56,6 +57,7 @@ ul li a:hover{
     .logo img{
         padding-left: 29%;
     }
+
 }
 /* fooooooooooooooooooooooooter */
 .site-footer
@@ -119,21 +121,22 @@ ul li a:hover{
 
 @media (max-width:991px)
 {
-  .site-footer [class^=col-]
-  {
-      margin-bottom:30px
-  }
+    .site-footer [class^=col-]
+    {
+        margin-bottom:30px
+    }
 }
 
 @media (max-width:767px)
 {
-  .site-footer
-  {
-      padding-bottom:0
-  }
-  .site-footer .site-footer 
-  {
-      text-align:center
-  }
+    .site-footer
+    {
+        padding-bottom:0
+    }
+    
+   .site-footer .site-footer 
+   {
+       text-align:center
+   }
 
 }
