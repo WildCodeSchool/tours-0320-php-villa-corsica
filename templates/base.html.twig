@@ -8,7 +8,34 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+     <div class="logo">
+     <img src="{{ asset('bulid/logo.png') }}"  alt="exemple"/>
+   </div>
+<nav>
+    <ul class="nav justify-content-center bg-primary">
+       <li class="nav-item active">
+        <a class="nav-link" href="#">Villas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Location</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Réservation</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" href="#">Loisirs</a>
+      </li> <li class="nav-item active">
+        <a class="nav-link active" href="#">Livre d'or</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% block body %}
+{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
