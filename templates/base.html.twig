@@ -9,7 +9,7 @@
     </head>
     <body>
      <div class="logo">
-     <img src="{{ asset('bulid/logo.png') }}"  alt="exemple"/>
+     <img src="{{ asset('build/logo.png') }}"  alt="exemple"/>
    </div>
 <nav>
     <ul class="nav justify-content-center bg-primary">
@@ -33,9 +33,35 @@
     </ul>
   </div>
 </nav>
-
 {% block body %}
 {% endblock %}
+  {# Site footer #} 
+  {# it's not completed because we dont have the information from the client #}
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify"></p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Contact</h6>
+            <ul class="footer-links">
+              <li></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Accès</h6>
+            <ul class="footer-links" >
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+</footer>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: $secondary;
+    background-color:$secondary;
 }
 
 a {
@@ -33,7 +33,6 @@ a {
 ul li{
     font-family: 'snellregular';
     font-size: 40px;
-
 }
 
 .big_img > img{
@@ -62,3 +61,85 @@ ul li a:hover{
 
 }
 
+/* fooooooooooooooooooooooooter */
+
+.site-footer
+{
+    background-color:#6C8F6E;
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:24px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-footer hr
+{
+    border-top-color:#bbb;
+    opacity:0.5
+}
+
+.site-footer hr.small
+{
+    margin:20px 0
+}
+
+.site-footer h6
+{
+    color:#f5b95a;
+    font-size:25px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+}
+
+.site-footer a
+{
+    color:white;
+}
+
+.site-footer a:hover
+{
+    color:#3366cc;
+    text-decoration:none;
+}
+
+.footer-links
+{
+    padding-left:0;
+    list-style:none
+}
+
+.footer-links li
+{
+    font-family: Arial, Helvetica, sans-serif;
+    display:block;
+    font-size: 20px;
+}
+
+.footer-links.inline li
+{
+    display:inline-block
+}
+
+@media (max-width:991px)
+{
+    .site-footer [class^=col-]
+    {
+        margin-bottom:30px
+    }
+}
+
+@media (max-width:767px)
+{
+    .site-footer
+    {
+        padding-bottom:0
+    }
+
+    .site-footer .site-footer 
+    {
+        text-align:center
+    }
+
+}
