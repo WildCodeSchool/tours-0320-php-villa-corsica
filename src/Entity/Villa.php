@@ -74,6 +74,11 @@ class Villa
      */
     private $pictures;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $poster;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
@@ -231,6 +236,18 @@ class Villa
                 $picture->setVilla(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(string $poster): self
+    {
+        $this->poster = $poster;
 
         return $this;
     }
