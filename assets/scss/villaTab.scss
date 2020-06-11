@@ -1,74 +1,51 @@
-#villa_list_title{
-  padding-top: 1em;
-  text-align: center;
-  font-family: Cochin;
-  font-weight: bolder;
-  font-size: 40px;
-}
-
-.villa_list {
-  display: inline-block;
-  padding-top: 2em;
-  flex-wrap: wrap;
-}
-
-.villa_img{
-  width: 50%;
-}
-
-.villa_text{
-  text-align: center;
-}
-
-.svg_logo{
-  display: flex;
-  justify-content: space-around;
-  padding-left: 20px;
-}
-
-.svg_infos{
-  display: flex;
-  justify-content: space-around;
-  font-weight: bolder;
-}
-
-
-@media (min-width: 701px) {
-  #villa_list_title{
+#villa_list_title
+{
     padding-top: 1em;
     text-align: center;
-    font-family: Cochin;
+    font-family: snellregular;
     font-weight: bolder;
-    font-size: 40px;
-  }
+    font-size: 60px;
+    color: $third;
+}
 
-  .villa_list {
+.villa_list
+{
     display: flex;
     padding-top: 2em;
     flex-wrap: wrap;
-  }
+}
 
-  .villa_img{
+.villa_img
+{
     width: 50%;
-  }
+    padding: 30px;
+}
 
-  .villa_text{
+.villa_text
+{
     text-align: center;
-  }
+}
 
-  .svg_logo{
+.svg_logo
+{
     display: flex;
     justify-content: space-around;
-    padding-left: 20px;
-  }
+    padding-left: 25px;
+}
 
-  .svg_infos{
+.svg_infos
+{
     display: flex;
     justify-content: space-around;
     font-weight: bolder;
-  }
-
 }
+
+#sqm
+{
+    padding-right: 20px;
+}
+
+
 
 
 
