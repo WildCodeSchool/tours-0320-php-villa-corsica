@@ -14,7 +14,7 @@
 <nav>
     <ul class="nav justify-content-center bg-primary">
        <li class="nav-item active">
-        <a class="nav-link" href="#">Villas</a>
+        <a class="nav-link" href="{{ path('villa_index') }}">Villas</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Location</a>
@@ -35,7 +35,7 @@
 </nav>
 {% block body %}
 {% endblock %}
-  {# Site footer #} 
+  {# Site footer #}
   {# it's not completed because we dont have the information from the client #}
     <footer class="site-footer">
       <div class="container">

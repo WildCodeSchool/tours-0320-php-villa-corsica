@@ -1,0 +1,51 @@
+#villa_list_title
+{
+    padding-top: 1em;
+    text-align: center;
+    font-family: snellregular;
+    font-weight: bolder;
+    font-size: 60px;
+    color: $third;
+}
+
+.villa_list
+{
+    display: flex;
+    padding-top: 2em;
+    flex-wrap: wrap;
+}
+
+.villa_img
+{
+    width: 50%;
+    padding: 30px;
+}
+
+.villa_text
+{
+    text-align: center;
+}
+
+.svg_logo
+{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.svg_infos
+{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bolder;
+}
+
+#sqm
+{
+    padding-right: 20px;
+}
+
+
+
+
+

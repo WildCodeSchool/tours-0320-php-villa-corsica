@@ -1,5 +1,7 @@
 @import "vars";
 @import "~bootstrap/scss/bootstrap";
+@import "villaTab.scss";
+
 @font-face {
     font-family: 'snellregular';
     src: url('../fonts/snellbt-regular-webfont.eot');
@@ -32,7 +34,7 @@ a {
 
 ul li{
     font-family: 'snellregular';
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .big_img > img{
@@ -137,7 +139,7 @@ ul li a:hover{
         padding-bottom:0
     }
 
-    .site-footer .site-footer 
+    .site-footer .site-footer
     {
         text-align:center
     }
