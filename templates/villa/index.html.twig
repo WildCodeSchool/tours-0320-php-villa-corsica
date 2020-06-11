@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Villa index{% endblock %}
+
+{% block body %}
+    <div class="big_img">
+     <img src="{{ asset('build/villas2.jpg') }}"  alt="exemple"/>
+   </div>
+   <div class="card_containeur">
+    {% for villa in villas %}
+        <div class="card" style="width: 30em;">
+            <img class="card-img-top" src="{{ villa.poster }}" alt="Villa Fiori 1">
+            <div class="card-body">
+            <p class="card-text">{{ villa.name }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+    <a href="{{ path('villa_new') }}">Create new</a>
+{% endblock %}
