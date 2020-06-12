@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-     <div class="logo">
-     <img src="{{ asset('build/logo.png') }}"  alt="exemple"/>
-   </div>
+    {% endblock %}
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="exemple"/></a>
+    </div>
+</header>
 <nav>
     <ul class="nav justify-content-center bg-primary">
-       <li class="nav-item active">
-        <a class="nav-link" href="{{ path('villa_index') }}">Villas</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Location</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Services</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Réservation</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active" href="#">Loisirs</a>
-      </li> <li class="nav-item active">
-        <a class="nav-link active" href="#">Livre d'or</a>
-      </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ path('villa_index') }}">Villas</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Location</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Réservation</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link active" href="#">Loisirs</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link active" href="#">Livre d'or</a>
+        </li>
     </ul>
-  </div>
 </nav>
-{% block body %}
-{% endblock %}
-  {# Site footer #}
-  {# it's not completed because we dont have the information from the client #}
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
+{% block content %}{% endblock %}
+<footer class="site-footer">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
             <h6>About</h6>
             <p class="text-justify"></p>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
+        </div>
+        <div class="col-xs-6 col-md-3">
             <h6>Contact</h6>
             <ul class="footer-links">
-              <li></li>
+                <li></li>
             </ul>
-          </div>
-
-          <div class="col-xs-6 col-md-3">
-            <h6>Accès</h6>
-            <ul class="footer-links" >
-              <li></li>
-            </ul>
-          </div>
         </div>
+        <div class="col-xs-6 col-md-3">
+            <h6>Accès</h6>
+            <ul class="footer-links">
+                <li></li>
+            </ul>
+        </div>
+    </div>
         <hr>
-      </div>
 </footer>
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
 </html>
