@@ -1,6 +1,8 @@
 @import "vars";
 @import "reservation.scss";
 @import "~bootstrap/scss/bootstrap";
+@import "villaTab.scss";
+
 @font-face {
     font-family: 'snellregular';
     src: url('../fonts/snellbt-regular-webfont.eot');
@@ -34,6 +36,7 @@ a {
 ul li{
     font-family: 'snellregular';
     font-size: 30px;
+
 }
 
 
@@ -139,7 +142,7 @@ ul li a:hover{
         padding-bottom:0
     }
 
-    .site-footer .site-footer 
+    .site-footer .site-footer
     {
         text-align:center
     }
