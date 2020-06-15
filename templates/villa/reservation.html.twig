@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+{% block body %}
+ 
+     {% for villa in villas %}
+    <div class="villa_reservation">
+        <div class="villa_name">
+                <img  src="{{ villa.poster }}" alt="{{ villa.name }}"/>
+            </div>
+            <div class="description">
+                <h2>{{ villa.name }}</h2>
+                <p>{{ villa.description }}</p>  
+            </div>
+        <hr>
+    </div>
+
+        {% else %}
+        {% endfor %}
+
+{% endblock %}
