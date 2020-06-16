@@ -1,6 +1,7 @@
 @import "vars";
 @import "~bootstrap/scss/bootstrap";
 @import "villaTab.scss";
+@import "activity.scss";
 
 @font-face {
     font-family: 'snellregular';
@@ -37,7 +38,7 @@ ul li{
     font-size: 35px;
 }
 
-.big_img > img{
+.cover_img > img{
     width: 100%;
     margin-top: 0;
     height: 500px;
@@ -63,7 +64,7 @@ ul li a:hover{
 
 }
 
-/* fooooooooooooooooooooooooter */
+/* footer */
 
 .site-footer
 {
