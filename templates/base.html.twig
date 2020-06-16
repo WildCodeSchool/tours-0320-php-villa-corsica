@@ -10,7 +10,11 @@
     <body>
      <div class="logo">
      <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="logo"/></a>
+      <div class="corse-weather">
+     <p class="temp text-warning"><img src="weather" class="icon" alt="weather"/></p>
+      </div>
    </div>
+  
 <nav>
     <ul class="nav justify-content-center bg-primary ">
     <li class="nav-item active">
@@ -32,10 +36,8 @@
         <a class="nav-link active" href="/contact">Contact</a>
      </li>
     </ul>
+   
 </nav>
-<div class="corse-weather">
-      <p class="temp text-warning"><img src="weather" class="icon" alt="weather"/></p>
-      </div>
 {% block body %}
 {% endblock %}
   {# Site footer #}
