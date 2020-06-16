@@ -38,8 +38,7 @@ class VillaController extends AbstractController
     {
         $form = $this->createForm(BookingType::class);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $booking = $form->getData();
             $email = (new TemplatedEmail())
                 ->from($booking['email'])

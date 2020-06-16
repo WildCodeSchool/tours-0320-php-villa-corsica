@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -15,11 +14,11 @@ class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('lastname', TextType::class,['label' => 'Nom', 'constraints' => new NotBlank()])
-                ->add('firstname', TextType::class,['label' => 'Prénom','constraints' => new NotBlank()])
-                ->add('address', TextType::class,['label' => 'Adresse','constraints' => new NotBlank()])
-                ->add('email', EmailType::class,['label' => 'Email','constraints' => new NotBlank()])
-                ->add('adults', ChoiceType::class,[
+        $builder->add('lastname', TextType::class, ['label' => 'Nom', 'constraints' => new NotBlank()])
+                ->add('firstname', TextType::class, ['label' => 'Prénom', 'constraints' => new NotBlank()])
+                ->add('address', TextType::class, ['label' => 'Adresse', 'constraints' => new NotBlank()])
+                ->add('email', EmailType::class, ['label' => 'Email', 'constraints' => new NotBlank()])
+                ->add('adults', ChoiceType::class, [
                     'label' => 'Adultes',
                     'constraints' => new NotBlank(),
                     'choices'  => [
@@ -32,7 +31,7 @@ class BookingType extends AbstractType
                         6,
                     ],
                 ])
-                ->add('kids', ChoiceType::class,[
+                ->add('kids', ChoiceType::class, [
                     'label' => 'Enfants',
                     'choices'  => [
                         0,
