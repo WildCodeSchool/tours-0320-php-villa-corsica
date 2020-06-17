@@ -9,4 +9,16 @@
 require('../scss/app.scss');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+const $ = require('jquery');
+// weather API 
+var city = "Corse";
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=b494c2618576c2d414c7c03aabeff46b",
+  function(data){
+     console.log(data);
+     var temp = data.main.temp;
+     var weather = data.weather[0].main;
+     $('.weather').append(weather); 
+     $('.temp').append(temp);
+  }
+ );
+ 
