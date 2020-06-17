@@ -1,0 +1,180 @@
+.green_bg
+{
+    background-color: #6C8F6E;
+}
+
+#office_title
+{
+    padding-top: 15px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+
+.activity_link_title
+{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-style: italic;
+}
+
+a.activity_link_title:hover
+{
+    color: #f5b95a;
+}
+
+.office_containeur
+{
+    display: flex;
+}
+
+#activity_img_portoV
+{
+    width: 52%;
+    margin-right: 3%;
+}
+
+
+.activity_link_containeur_portoV
+{
+    margin: auto;
+    display: block;
+}
+
+// Porto Veccchio 1 à 5
+
+#activity_type_1
+{
+    font-size: 28px;
+    color: black;
+    padding-left: 8px;
+}
+
+#activity_type_2
+{
+    font-size: 28px;
+    color: black;
+    padding-left: 28px;
+}
+
+#activity_type_3
+{
+    font-size: 28px;
+    color: black;
+    padding-left: 28px;
+}
+
+#activity_type_4
+{
+    font-size: 28px;
+    color: black;
+    padding-left: 30px;
+}
+
+#activity_type_5
+{
+    font-size: 28px;
+    color: black;
+    padding-left: 55px;
+}
+
+// ------------------PARTIE ZONZA--------------------------
+
+#activity_img_zonza
+{
+    width: 52%;
+    margin-right: 3%;
+}
+
+
+.activity_link_containeur_zonza
+{
+    margin: auto;
+    display: block;
+}
+
+// Zonza de 6 à 9
+
+#activity_type_6
+{
+    padding-left: 9px;
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_7
+{
+    padding-left: 7px;
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_8
+{
+    padding-left: 15px;
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_9
+{
+    padding-left: 40px;
+    font-size: 28px;
+    color: black;
+}
+
+a.activity_link_list
+{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+// ----------------  PARTIE BONIFACIO  --------------------//
+
+#activity_img_bonifacio
+{
+    width: 52%;
+    margin-right: 4%;
+}
+
+
+.activity_link_containeur_bonifacio
+{
+    margin: auto;
+    display: block;
+}
+
+// De 10 à 13
+
+#activity_type_10
+{
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_11
+{
+    padding-left: 25px;
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_12
+{
+    padding-left: 40px;
+    font-size: 28px;
+    color: black;
+}
+
+#activity_type_13
+{
+    padding-left: 70px;
+    font-size: 28px;
+    color: black;
+}
+
+
+
+
+
