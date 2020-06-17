@@ -44,7 +44,7 @@ class VillaController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $information = $form->getData();
             $email = (new TemplatedEmail())
-                ->from('core54@gmail.com')
+                ->from($this->getParameter('mailer_from'))
                 ->to(new Address($this->getParameter('mailer_to')))
                 ->subject('Reservation')
             // path of the Twig template to render

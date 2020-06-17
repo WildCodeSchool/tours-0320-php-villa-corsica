@@ -32,6 +32,7 @@ class BookingType extends AbstractType
                     ],
                 ])
                 ->add('kids', ChoiceType::class, [
+                    'label' => 'Enfants',
                     'choices'  => [
                         0,
                         1,
@@ -41,7 +42,7 @@ class BookingType extends AbstractType
                     ],
                 ])
                 ->add('arrive', DateType::class, [
-                    'label' => 'Arrivé',
+                    'label' => 'Arrivée',
                     'widget' => 'single_text',
                 ])
                 ->add('departure', DateType::class, [

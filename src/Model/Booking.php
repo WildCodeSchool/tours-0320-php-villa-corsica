@@ -12,8 +12,8 @@ class Booking
     * @Assert\Length(
      *      min = 2,
      *      max = 50,
-     *      minMessage = "votre prénom doit avoir plus de 2 caractère",
-     *      maxMessage = "votre prénom doit avoir moins de 50 caractère",
+     *      minMessage = "votre prénom doit avoir plus de 2 caractères",
+     *      maxMessage = "votre prénom doit avoir moins de 50 caractères",
      * )
      * @Assert\Type("string")
      * @Assert\NotBlank
@@ -24,7 +24,7 @@ class Booking
     /**
      * @Assert\Length(
      *      min = 2,
-     *      minMessage = "votre Nome doit avoir plus de 2 caractère")
+     *      minMessage = "votre Nome doit avoir plus de 2 caractères")
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
@@ -34,7 +34,7 @@ class Booking
     /**
      * @Assert\Length(
      *      min = 2,
-     *      minMessage = "votre adresse doit avoir plus de 2 caractère")
+     *      minMessage = "votre adresse doit avoir plus de 2 caractères")
      * @Assert\Type("string")
      * @Assert\NotBlank
      */
