@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Villa;
+use App\Model\Booking;
 use App\Form\BookingType;
+use App\Model\Booking as ModelBooking;
 use App\Repository\VillaRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,19 +38,20 @@ class VillaController extends AbstractController
      */
     public function show(Villa $villa, Request $request, MailerInterface $mailer): Response
     {
-        $form = $this->createForm(BookingType::class);
+        $booking= new Booking();
+        $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $booking = $form->getData();
+            $information = $form->getData();
             $email = (new TemplatedEmail())
-                ->from($booking['email'])
+                ->from('core54@gmail.com')
                 ->to(new Address($this->getParameter('mailer_to')))
                 ->subject('Reservation')
             // path of the Twig template to render
                 ->htmlTemplate('email/reservation.html.twig')
-           // pass l'object (booking et villa) to the template
+           // pass l'object (information et villa) to the template
                 ->context([
-                   'booking' => $booking,
+                   'information' => $information,
                    'villa'=>$villa,
                     ]);
             $mailer->send($email);
