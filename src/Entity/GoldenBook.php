@@ -32,6 +32,11 @@ class GoldenBook
      */
     private $commentary;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Villa::class, inversedBy="goldenBooks")
+     */
+    private $villa;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class GoldenBook
     public function setCommentary(string $commentary): self
     {
         $this->commentary = $commentary;
+
+        return $this;
+    }
+
+    public function getVilla(): ?Villa
+    {
+        return $this->villa;
+    }
+
+    public function setVilla(?Villa $villa): self
+    {
+        $this->villa = $villa;
 
         return $this;
     }

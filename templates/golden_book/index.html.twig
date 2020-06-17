@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre d'or{% endblock %}
+
+{% block content %}
+<div class="livre-img">
+<img src="{{ asset('build/cover/pen.png') }}" alt="livre img">
+</div>
+<div class="commentary">
+   {% for golden_book in golden_books %}
+         <h2>*{ {{ golden_book.commentary }} }*</h2>
+          <h2>{{ golden_book.villa.name }}</h2>
+         <h2>{{ golden_book.name }} le: {{ golden_book.departureDate|date('d/m/y') }}</h2>
+         <hr>
+          {% else %}
+          <h6>Il n'y a pas de commentaire </h6>
+    {% endfor %}
+       <a class=" ajouter btn btn-warning btn-lg" href="{{ path('golden_book_new') }}">Ajouter</a>
+
+
+</div>
+{% endblock %}
