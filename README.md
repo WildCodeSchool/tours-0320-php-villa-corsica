@@ -34,6 +34,7 @@ It's symfony website-skeleton project with some additional tools to validate cod
 
 1. Run `symfony server:start` to launch your local php web server
 2. Run `yarn run dev --watch` to launch your local server for assets
+3. configurer le fichier (.env) pour pouvoir recevoir un email.
 
 ### Testing
 
