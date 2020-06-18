@@ -1,28 +1,39 @@
-.livre-img{
+.goldenbook_container{
+    background-color: rgb(248, 245, 245);
+}
+
+.livre-img {
     text-align: center;
-    margin-bottom: 5%;
 }
 
 .livre-img img{
-    width: 100px;
+    width: 150px;
     height: 100px;
 }
 
 .goldForm{
-width: 70%;
- padding-left: 30%;
- margin-bottom: 10%;
+    width: 70%;
+    padding-left: 30%;
+    margin-bottom: 10%;
 }
 
+.commentary_container h2{
+    font-size: 40px;
+}
 
 .commentary{
-    color:$third;
+    font-family: 'snellregular';
     margin-bottom: 5%;
+    margin-top: 5%;
     text-align: center;
 }
 
-.ajouter{
-    width: 150px;
+.ajouter_btn {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.ajouter_btn a{
     font-family: Arial, Helvetica, sans-serif;
 }
 

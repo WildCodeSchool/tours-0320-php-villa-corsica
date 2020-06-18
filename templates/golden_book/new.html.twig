@@ -18,8 +18,10 @@
     <div class="col">{{ form_row(form.villa) }}</div>
 </div>
 {{ form_rest(form) }}
- <button class="ajouter btn btn-warning btn-lg">{{ button_label|default('Ajouter') }}</button>
-<a  class="ajouter btn btn-warning btn-lg" href="{{ path('golden_book_index') }}">Retour</a>
+  <div class="ajouter_btn">
+ <button class=" btn btn-warning btn-lg">{{ button_label|default('Partager') }}</button>
+<a  class=" btn btn-warning btn-lg" href="{{ path('golden_book_index') }}">Retour</a>
+</div>
 {{ form_end(form) }}
 </div>
 
