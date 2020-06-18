@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    {% block stylesheets %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Villa Corsica{% endblock %}</title>
+        {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-</head>
-<body>
-<header>
-    <div class="logo">
-        <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="exemple"/></a>
-    </div>
-</header>
+        {% endblock %}
+    </head>
+    <body>
+     <div class="logo">
+     <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="logo"/></a>
+   </div>
+  
 <nav>
-    <ul class="nav justify-content-center bg-primary">
-        <li class="nav-item active">
-            <a class="nav-link" href="{{ path('villa_index') }}">Villas</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Location</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Réservation</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link active" href="{{ path('activity_index') }}">Loisirs</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link active" href="#">Livre d'or</a>
-        </li>
+    <ul class="nav justify-content-center bg-white ">
+    <li class="nav-item active">
+        <a class="nav-link" href="/">Accueil</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="{{ path('villa_index') }}">Villas</a>
+      </li>
+      <li class="nav-item active">
+         <a class="nav-link active" href="{{ path('activity_index') }}">Loisirs</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/goldenBook">Livre d'or</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/services">Services</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" href="/contact">Contact</a>
+     </li>
     </ul>
+   
 </nav>
 {% block content %}{% endblock %}
-<footer class="site-footer">
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
+  {# Site footer #}
+  {# it's not completed because we dont have the information from the client #}
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>Accès</h6>
+            <div class="access">
+            <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.314492755933!2d9.400066548143524!3d41.747797575395644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d991a37364c823%3A0x706a2084a8281ae6!2sTarco%2C%2020135%20Conca!5e1!3m2!1sfr!2sfr!4v1591949168133!5m2!1sfr!2sfr" ></iframe>
+            </div>
             <p class="text-justify"></p>
         </div>
         <div class="col-xs-6 col-md-3">
@@ -47,11 +53,12 @@
             <ul class="footer-links">
                 <li></li>
             </ul>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <h6>Accès</h6>
-            <ul class="footer-links">
-                <li></li>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>About</h6>
+            <ul class="footer-links" >
+              <li></li>
             </ul>
         </div>
     </div>
