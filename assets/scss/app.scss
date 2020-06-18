@@ -34,17 +34,6 @@ a {
 
 }
 
-.corse-weather {
-    float: right;
-    width: 150px;
-    margin-top: 70px;
-
-}
-
-.corse-weather h3{
-    display: inline-block;
-}
-
 ul li {
     font-family: 'snellregular';
     font-size: 30px;
@@ -89,14 +78,8 @@ ul li a:hover {
 @media only screen and (max-width: 485px) {
 
     ul li {
-        font-size: 15px;
+        font-size: 25px;
     }
-
-    nav{
-        padding-left: 25%;
-
-    }
-
 
     .access iframe{
         width:200px;
