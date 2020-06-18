@@ -2,7 +2,9 @@
 @import "~bootstrap/scss/bootstrap";
 @import "villaTab.scss";
 @import "villadetails.scss";
+@import "activity.scss";
 @import "livre.scss";
+
 
 @font-face {
     font-family: 'snellregular';
@@ -39,7 +41,7 @@ ul li{
     font-size: 35px;
 }
 
-.big_img > img{
+.cover_img > img{
     width: 100%;
     margin-top: 0;
     height: 500px;
@@ -65,7 +67,7 @@ ul li a:hover{
 
 }
 
-/* fooooooooooooooooooooooooter */
+/* footer */
 
 .site-footer
 {
@@ -90,7 +92,7 @@ ul li a:hover{
 
 .site-footer h6
 {
-    color:#f5b95a;
+    color:white;
     font-size:25px;
     text-transform:uppercase;
     margin-top:5px;
