@@ -44,7 +44,7 @@ class Booking
      * @Assert\Type("string")
      * @Assert\NotBlank
      * @Assert\Email(
-     *     message = "Vote email n'est pas valide."
+     *     message = "Votre email n'est pas valide."
      * )
      */
     private $email;
