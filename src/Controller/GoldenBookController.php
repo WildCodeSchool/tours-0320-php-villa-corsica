@@ -18,21 +18,10 @@ class GoldenBookController extends AbstractController
     /**
      * @Route("/", name="golden_book_index", methods={"GET","POST"})
      */
-    public function index(GoldenBookRepository $goldenBookRepository, Request $request): Response
+    public function index(GoldenBookRepository $goldenBookRepository): Response
     {
-        $goldenBook = new GoldenBook();
-        $form = $this->createForm(GoldenBookType::class, $goldenBook);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($goldenBook);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('golden_book_index');
-        }
         return $this->render('golden_book/index.html.twig', [
             'golden_books' => $goldenBookRepository->findAll(),
-            'form' => $form->createView(),
         ]);
     }
 
