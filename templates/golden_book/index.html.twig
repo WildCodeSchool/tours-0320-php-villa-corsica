@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre d'or{% endblock %}
+
+{% block content %}
+<div class="goldenbook_container">
+   
+{% for golden_book in golden_books %}
+<div class="commentary_container">
+    <div class="commentary">
+        <h2>" {{ golden_book.commentary }} "</h2>
+        <h2>{{ golden_book.villa.name }}</h2>
+        <h2>{{ golden_book.name }} le: {{ golden_book.departureDate|date('d/m/y') }}</h2>
+    </div>
+    {% else %}
+          <h6>Il n'y a pas de commentaire </h6>
+    {% endfor %}
+    <div class="ajouter_btn">
+       <a class="btn btn-warning btn-lg" href="{{ path('golden_book_new') }}">Ajouter</a>
+    </div>
+</div>
+</div>
+{% endblock %}
