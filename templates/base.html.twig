@@ -33,8 +33,16 @@
       <li class="nav-item active">
         <a class="nav-link active" href="/">Contact</a>
      </li>
+
     </ul>
 </nav>
+{% for label, messages in app.flashes(['success', 'danger']) %}
+ {% for message in messages %}
+    <div class="alert alert-{{ label }}">
+        {{ message }}
+    </div>
+ {% endfor %}
+{% endfor %}
 {% block content %}{% endblock %}
   {# Site footer #}
   {# it's not completed because we dont have the information from the client #}

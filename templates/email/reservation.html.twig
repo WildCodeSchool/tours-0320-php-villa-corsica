@@ -1,0 +1,11 @@
+{% block body_text %}
+    <h1>Une demande de réservation sur la villa : {{villa.name}}</h1>
+    <h4>Nom :{{booking.lastname}}</h4>
+    <h4>Prénom :{{booking.firstname}}</h4>
+    <h4>Adresse :{{booking.address}}</h4>
+    <h4>Mail :{{booking.email}}</h4>
+    <h4>Adultes :{{booking.adults}}</h4>
+    <h4>Enfants :{{booking.kids}}</h4>
+    <h4>Date d’arrivée:{{booking.arrive|date('d/m/y')}}</h4>
+    <h4>Date de départ :{{booking.departure|date('d/m/y')}}</h4>
+{% endblock %}
