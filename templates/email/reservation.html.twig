@@ -1,23 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation</title>
-</head>
-<body>
-
-    <h1>Un demande de réservation sur la villa : {{villa.name}}</h1>
-    <h4>Nom :{{information.lastname}}</h4>
-    <h4>Prénom :{{information.firstname}}</h4>
-    <h4>Adresse :{{information.address}}</h4>
-    <h4>Mail :{{information.email}}</h4>
-    <h4>Adultes :{{information.adults}}</h4>
-    <h4>Enfants :{{information.kids}}</h4>
-    <h4>Date d’arrivée:{{information.arrive|date('d/m/y')}}</h4>
-    <h4>Date de départ :{{information.departure|date('d/m/y')}}</h4>
-
-
-</body>
-</html>
+{% block body_text %}
+    <h1>Une demande de réservation sur la villa : {{villa.name}}</h1>
+    <h4>Nom :{{booking.lastname}}</h4>
+    <h4>Prénom :{{booking.firstname}}</h4>
+    <h4>Adresse :{{booking.address}}</h4>
+    <h4>Mail :{{booking.email}}</h4>
+    <h4>Adultes :{{booking.adults}}</h4>
+    <h4>Enfants :{{booking.kids}}</h4>
+    <h4>Date d’arrivée:{{booking.arrive|date('d/m/y')}}</h4>
+    <h4>Date de départ :{{booking.departure|date('d/m/y')}}</h4>
+{% endblock %}

@@ -13,7 +13,6 @@ class Booking
      *      min = 2,
      *      max = 50,
      *      minMessage = "votre prénom doit avoir plus de 2 caractères",
-     *      maxMessage = "votre prénom doit avoir moins de 50 caractères",
      * )
      * @Assert\Type("string")
      * @Assert\NotBlank
@@ -44,6 +43,9 @@ class Booking
     /**
      * @Assert\Type("string")
      * @Assert\NotBlank
+     * @Assert\Email(
+     *     message = "Vote email n'est pas valide."
+     * )
      */
     private $email;
 
@@ -51,12 +53,14 @@ class Booking
     /**
      *@Assert\NotBlank
      *@Assert\Type("integer")
+     *@Assert\Choice({0, 1, 2, 3, 4, 5, 6})
      */
     private $adults;
 
     /**
      * @Assert\Type("integer")
      * @Assert\NotBlank
+     *@Assert\Choice({0, 1, 2, 3, 4})
      */
     private $kids;
 

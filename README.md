@@ -34,7 +34,7 @@ It's symfony website-skeleton project with some additional tools to validate cod
 
 1. Run `symfony server:start` to launch your local php web server
 2. Run `yarn run dev --watch` to launch your local server for assets
-3. configurer le fichier (.env) pour pouvoir recevoir un email.
+3. Start declaring your DSN line 31 in the file (.env).Then You need to delete the two “#” at the beginning of the line 39 and 40 , then fill up the 2 lines with  2 email adresses.
 
 ### Testing
 
