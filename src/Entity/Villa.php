@@ -79,9 +79,15 @@ class Villa
      */
     private $poster;
 
+    /**
+     * @ORM\OneToMany(targetEntity=GoldenBook::class, mappedBy="villa")
+     */
+    private $goldenBooks;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
+        $this->goldenBooks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -248,6 +254,37 @@ class Villa
     public function setPoster(string $poster): self
     {
         $this->poster = $poster;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|GoldenBook[]
+     */
+    public function getGoldenBooks(): Collection
+    {
+        return $this->goldenBooks;
+    }
+
+    public function addGoldenBook(GoldenBook $goldenBook): self
+    {
+        if (!$this->goldenBooks->contains($goldenBook)) {
+            $this->goldenBooks[] = $goldenBook;
+            $goldenBook->setVilla($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGoldenBook(GoldenBook $goldenBook): self
+    {
+        if ($this->goldenBooks->contains($goldenBook)) {
+            $this->goldenBooks->removeElement($goldenBook);
+            // set the owning side to null (unless already changed)
+            if ($goldenBook->getVilla() === $this) {
+                $goldenBook->setVilla(null);
+            }
+        }
 
         return $this;
     }

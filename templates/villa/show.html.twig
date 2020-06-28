@@ -62,27 +62,36 @@
             <th scope="row">Superficie</th>
             <td>{{villa.sqm}}</td>
         </tr>
-        <tr>
-            <th scope="row">Séjour minimum</th>
-            <td>{{villa.minimumStay}}</td>
-        </tr>
-        <tr>
-            <th scope="row">Prix de départ (en euros)</th>
-            <td>{{villa.priceFrom}}</td>
-        </tr>
     </tbody>
     </table>
     <hr>
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>
-        <div class="container">
-    </div>
-    <div id="boutonbooking">
-    <input class="favoritestyled text-right"
-       type="button"
-       value="Effectuer une réservation">
-    </div>
+          <div id="bookingFomr" class="mt-5" >
+            {{ form_start(form) }}
+                <div class="row">
+                   <div class="col">{{ form_row(form.lastname) }}</div>
+                    <div class="col">{{ form_row(form.firstname) }}</div>
+                    </div>
+                    <div class="row">
+                    <div class="col">{{ form_row(form.address) }}</div>
+                    <div class="col">{{ form_row(form.email) }}</div>
+                    </div>
+                    <div class="row">
+                    <div class="col">{{ form_row(form.adults) }}</div>
+                    <div class="col">{{ form_row(form.kids) }}</div>
+                    </div>
+                    <div class="row">
+                    <div class="col">{{ form_row(form.arrive) }}</div>
+                    <div class="col">{{ form_row(form.departure) }}</div>
+                    </div>
+            {{ form_rest(form) }}
+                  <div class="form-group">
+                     <button class="btn bg-info text-white" >{{ button_label|default('Réserver') }}</button> 
+                  </div>
+             {{ form_end(form) }}
+     </div>
 </div>
     </div>
 {% endblock %}
