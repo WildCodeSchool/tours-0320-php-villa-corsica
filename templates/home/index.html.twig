@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <div class="cover_img">
-        <img src="{{ asset('build/pages/home/cover.jpg') }}" alt=exemple>
-   </div>
-<div class="video"><iframe  src="https://www.youtube.com/embed/b5U46nl8_W8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="wrapper_containeur">
+        <div class="wrapper">
+            <div class="video_wrapper">
+                <iframe src="https://www.youtube.com/embed/b5U46nl8_W8?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
