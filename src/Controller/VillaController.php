@@ -16,6 +16,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/villa")
@@ -65,6 +66,7 @@ class VillaController extends AbstractController
     }
     
      /**
+      * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Villa $villa): Response
@@ -85,7 +87,8 @@ class VillaController extends AbstractController
     }
 
 
-       /**
+    /**
+     *  @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="villa_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Villa $villa): Response
@@ -101,6 +104,7 @@ class VillaController extends AbstractController
     }
 
     /**
+     *  @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="villa_new")
      */
     public function new(Request $request)

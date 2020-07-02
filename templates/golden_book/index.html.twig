@@ -11,9 +11,10 @@
         <h2>" {{ golden_book.commentary }} "</h2>
         <h2>{{ golden_book.villa.name }}</h2>
         <h2>{{ golden_book.name }} le: {{ golden_book.departureDate|date('d/m/y') }}</h2>
-    </div>
+    </div>   {% if is_granted('ROLE_ADMIN') %}
        <a class="btn btn-success btn-lg" href="{{ path('golden_book_edit', {'id': golden_book.id}) }}">edit</a>
     {{ include('golden_book/_delete_form.html.twig') }}
+     {% endif %}
     {% else %}
           <h6>Il n'y a pas de commentaire </h6>
     {% endfor %}

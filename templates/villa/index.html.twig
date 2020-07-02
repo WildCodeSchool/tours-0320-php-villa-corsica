@@ -15,6 +15,10 @@
                 </div>
                 <div class="villa_infos_containeur card-body">
                 <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
+                 {% if is_granted('ROLE_ADMIN') %}
+                 <a class="btn btn-success btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">edit</a>
+                   <a class="btn btn-success btn-lg" href="{{ path('villa_new', {'id': villa.id}) }}">Créer une nouvelle villa</a>
+                    {% endif %}
                 </div>
                 <div class="svg_logo">
                     <svg class="bi bi-people-fill" width="2em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
