@@ -63,6 +63,27 @@ class VillaController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
+     /**
+     * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
+     */
+    public function edit(Request $request, Villa $villa): Response
+    {
+        $form = $this->createForm(VillaType::class, $villa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('villa_index');
+        }
+
+        return $this->render('villa/edit.html.twig', [
+            'villa' => $villa,
+            'form' => $form->createView(),
+        ]);
+    }
+
 
        /**
      * @Route("/{id}", name="villa_delete", methods={"DELETE"})
