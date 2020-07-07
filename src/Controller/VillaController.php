@@ -65,7 +65,7 @@ class VillaController extends AbstractController
         ]);
     }
     
-     /**
+    /**
       * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
      */
@@ -73,13 +73,20 @@ class VillaController extends AbstractController
     {
         $form = $this->createForm(VillaType::class, $villa);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
+            $entityManager = $this->getDoctrine()->getManager();
+            $file=$form->get('posterFile')->getData();
+            $fileEx=$file->guessExtension();
+            $imageName=$villa->getName();
+            $newFilename =$imageName.'.'.$fileEx;
+            $file->move(
+                $this->getParameter('images_directory'),
+                $newFilename
+            );
+            $villa->setPoster($newFilename);
+            $entityManager->flush();
             return $this->redirectToRoute('villa_index');
         }
-
         return $this->render('villa/edit.html.twig', [
             'villa' => $villa,
             'form' => $form->createView(),
