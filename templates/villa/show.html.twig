@@ -28,6 +28,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+ {% if is_granted('ROLE_ADMIN') %}
+   <a  class=" btn btn-success btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>
+  {% endif %}
 </div>
 <div id="infosandbooking">
 <div id="leftpart">
