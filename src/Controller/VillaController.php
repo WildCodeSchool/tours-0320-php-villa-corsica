@@ -64,7 +64,7 @@ class VillaController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    
+
      /**
       * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
@@ -88,7 +88,7 @@ class VillaController extends AbstractController
 
 
     /**
-     *  @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="villa_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Villa $villa): Response
@@ -104,7 +104,7 @@ class VillaController extends AbstractController
     }
 
     /**
-     *  @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="villa_new")
      */
     public function new(Request $request)
@@ -119,7 +119,7 @@ class VillaController extends AbstractController
             $imageName=$villa->getName();
             $newFilename =$imageName.'.'.$fileEx;
             $file->move(
-                $this->getParameter('images_directory'),
+                $this->getParameter('images_directory/'),
                 $newFilename
             );
             $villa->setPoster($newFilename);
