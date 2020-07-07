@@ -10,6 +10,12 @@
     <body>
      <div class="logo">
      <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="logo"/></a>
+         {% if app.user %}
+             <div class="logout">
+             {{ app.user.email }}
+             <a class="btn bg-danger"href="{{ path('app_logout') }}">Se déconnecter</a>
+             </div>
+         {% endif %}
    </div>
 
 <nav>
@@ -33,7 +39,6 @@
       <li class="nav-item active">
         <a class="nav-link active" href="/contact">Contact</a>
      </li>
-
     </ul>
 </nav>
 {% for label, messages in app.flashes(['success', 'danger']) %}

@@ -65,11 +65,6 @@ class Villa
     private $priceFrom;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $minimumStay;
-
-    /**
      * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="villa", orphanRemoval=true)
      */
     private $pictures;
@@ -199,18 +194,6 @@ class Villa
     public function setPriceFrom(int $priceFrom): self
     {
         $this->priceFrom = $priceFrom;
-
-        return $this;
-    }
-
-    public function getMinimumStay(): ?int
-    {
-        return $this->minimumStay;
-    }
-
-    public function setMinimumStay(int $minimumStay): self
-    {
-        $this->minimumStay = $minimumStay;
 
         return $this;
     }

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200616182641 extends AbstractMigration
+final class Version20200702082353 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,9 +22,7 @@ final class Version20200616182641 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE golden_book ADD villa_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE golden_book ADD CONSTRAINT FK_67E09804285D9761 FOREIGN KEY (villa_id) REFERENCES villa (id)');
-        $this->addSql('CREATE INDEX IDX_67E09804285D9761 ON golden_book (villa_id)');
+        $this->addSql('DROP TABLE `admin`');
     }
 
     public function down(Schema $schema) : void
@@ -32,8 +30,6 @@ final class Version20200616182641 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE golden_book DROP FOREIGN KEY FK_67E09804285D9761');
-        $this->addSql('DROP INDEX IDX_67E09804285D9761 ON golden_book');
-        $this->addSql('ALTER TABLE golden_book DROP villa_id');
+        $this->addSql('CREATE TABLE `admin` (id INT AUTO_INCREMENT NOT NULL, account VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, password VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = \'\' ');
     }
 }
