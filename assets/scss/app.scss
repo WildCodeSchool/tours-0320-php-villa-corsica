@@ -9,6 +9,7 @@
 
 
 
+
 @font-face {
     font-family: 'snellregular';
     src: url('../fonts/snellbt-regular-webfont.eot');
@@ -24,15 +25,41 @@ body {
     background-color:$secondary;
 }
 
-.logo{
+input
+{
+    text-align: center;
+}
+
+.logo
+{
     background-color: #6C8F6E;
     text-align: center;
 }
 
-.logout
+.admin_wrapper
 {
-    text-align: right;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#admin
+{
+    font-family: 'snellregular';
+    font-size: 30px;
     color: white;
+}
+
+#logout
+{
+    font-family: "Roboto Light";
+    font-size: 20px;
+    color: white;
+}
+
+#login
+{
+    padding-top: 1em;
+    text-align: center;
 }
 
 .logo img{
