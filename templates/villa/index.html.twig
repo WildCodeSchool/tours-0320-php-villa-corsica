@@ -6,6 +6,11 @@
     <div class="cover_img">
      <img src="{{ asset('build/pages/villa/cover.jpg') }}"  alt="exemple"/>
    </div>
+   {% if is_granted('ROLE_ADMIN') %}
+<div class="btn_villa">
+<a class="btn btn-info btn-lg" href="{{ path('villa_new') }}">Ajouter une nouvelle villa</a>
+</div>
+{% endif %}
     <h1 id="villa_list_title">Nos villas</h1>
     <div class="villa_list card_containeur">
         {% for villa in villas %}
@@ -16,9 +21,10 @@
                 <div class="villa_infos_containeur card-body">
                 <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
                  {% if is_granted('ROLE_ADMIN') %}
-                 <a class="btn btn-success btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
-                   <a class="btn btn-success btn-lg" href="{{ path('villa_new') }}">Créer une nouvelle villa</a>
-                    {% endif %}
+                 <div class="btn_villa">
+                 <a class="btn btn-warning btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier la villa</a>
+                 </div>
+                 {% endif %}
                 </div>
                 <div class="svg_logo">
                     <svg class="bi bi-people-fill" width="2em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

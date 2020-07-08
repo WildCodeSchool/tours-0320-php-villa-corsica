@@ -3,9 +3,9 @@
 {% block title %}New Picture{% endblock %}
 
 {% block content %}
-    <h1>Ajouter une nouvelle photo</h1>
 
     {{ include('picture/_form.html.twig') }}
-
-    <a  class=" btn btn-primary btn-lg" href="{{ path('picture_index') }}">retour à la liste</a>
+    <div class="btn_villa">
+    <a  class=" btn btn-warning btn-lg" href="{{ path('picture_index') }}">Liste des toutes les photos</a>
+    </div>
 {% endblock %}
