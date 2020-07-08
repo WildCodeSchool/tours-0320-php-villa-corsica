@@ -64,6 +64,17 @@
     </tbody>
     </table>
     <hr>
+    <h2>Tarifs</h2>
+    {% for villa in villa.prices %}
+            <tr>
+                <td>{{ villa.amount }}</td>
+            </tr>
+        {% endfor %}
+        {% if is_granted('ROLE_ADMIN') %} 
+         <div class="btn_villa">
+         <a class=" btn btn-info btn-lg" href="{{ path('price_new', {'id': villa.id})}}">Ajouter des tarifs</a>
+         </div> 
+         {% endif %}
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>

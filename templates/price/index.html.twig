@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Price index{% endblock %}
+
+{% block content %}
+    <h1>Price index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Villa Id</th>
+                <th>Détails</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for price in prices %}
+            <tr>
+                <td>{{ price.id }}</td>
+                <td>{{ price.amount }}</td>
+                <td>
+                    <a href="{{ path('price_edit', {'id': price.id}) }}">Modifier les tarifs</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
