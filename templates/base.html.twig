@@ -9,9 +9,16 @@
     </head>
     <body>
      <div class="logo">
-     <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="logo"/></a>
-   </div>
-
+         <a href="/"><img src="{{ asset('build/logo.png') }}"  alt="logo"/></a>
+         {% if app.user %}
+             <div class="admin_wrapper">
+                 <p id="admin">{{ app.user.email }}</p>
+                 <div class="logout">
+                     <a id="logout" class="btn bg-danger"href="{{ path('app_logout') }}">Se déconnecter</a>
+                 </div>
+             </div>
+         {% endif %}
+     </div>
 <nav>
     <ul class="nav justify-content-center bg-white ">
     <li class="nav-item active">
@@ -24,41 +31,51 @@
          <a class="nav-link active" href="{{ path('activity_index') }}">Loisirs</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/">Livre d'or</a>
+
+        <a class="nav-link" href="/golden/book/">Livre d'or</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/">Services</a>
+        <a class="nav-link" href="/service">Services</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link active" href="/">Contact</a>
+        <a class="nav-link active" href="/contact">Contact</a>
      </li>
     </ul>
-
 </nav>
+{% for label, messages in app.flashes(['success', 'danger']) %}
+ {% for message in messages %}
+    <div class="alert alert-{{ label }}">
+        {{ message }}
+    </div>
+ {% endfor %}
+{% endfor %}
 {% block content %}{% endblock %}
   {# Site footer #}
-  {# it's not completed because we dont have the information from the client #}
     <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>Accès</h6>
             <div class="access">
-                <iframe id="carte" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15231.418582151717!2d9.354199784866891!3d41.65417014879752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d984d393edbc11%3A0xa0819a8982e5d80!2sCirendinu%2C%2020144%20Zonza!5e1!3m2!1sfr!2sfr!4v1592479791794!5m2!1sfr!2sfr"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475.9895151619871!2d9.361057753564493!3d41.653130256888225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM5JzExLjciTiA5wrAyMSc0MC4wIkU!5e1!3m2!1sfr!2sfr!4v1593416021528!5m2!1sfr!2sfr"></iframe>
             </div>
             <p class="text-justify"></p>
         </div>
         <div class="col-xs-6 col-md-3">
-            <h6>Contact</h6>
+            <h6>Adresse</h6>
             <ul class="footer-links">
-                <li></li>
+                <li>Lieu-Dit Pozzone</li>
+                <li>Cirendinu</li>
+                <li>Sainte Lucie de Porto-Vecchio 20144 </li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>About</h6>
+            <h6>Contact</h6>
             <ul class="footer-links" >
-              <li></li>
+              <li>06.14.85.56.48</li>
+              <li>06.23.93.58.12</li>
+              <li>pinarellu@wanadoo.fr</li>
             </ul>
         </div>
     </div>

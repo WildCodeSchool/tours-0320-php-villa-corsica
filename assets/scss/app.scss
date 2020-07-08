@@ -3,6 +3,12 @@
 @import "villaTab.scss";
 @import "villadetails.scss";
 @import "activity.scss";
+@import "livre.scss";
+@import "contact.scss";
+@import "service.scss";
+@import "bouton.scss";
+
+
 
 
 @font-face {
@@ -20,24 +26,45 @@ body {
     background-color:$secondary;
 }
 
-a {
-    font-family: 'snellregular';
-    color: $warm-color;
+input
+{
+    text-align: center;
 }
 
-
-.logo{
+.logo
+{
     background-color: #6C8F6E;
+    text-align: center;
+}
+
+.admin_wrapper
+{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#admin
+{
+    font-family: 'snellregular';
+    font-size: 30px;
+    color: white;
+}
+
+#logout
+{
+    font-family: "Roboto Light";
+    font-size: 20px;
+    color: white;
+}
+
+#login
+{
+    padding-top: 1em;
+    text-align: center;
 }
 
 .logo img{
     height: 150px;
-    padding-left: 40%;
-}
-
-ul li{
-    font-family: 'snellregular';
-    font-size: 35px;
 }
 
 .cover_img > img{
@@ -46,8 +73,52 @@ ul li{
     height: 500px;
 }
 
+a {
+    font-family: 'snellregular';
+    color: $warm-color;
+}
+
+ul li{
+    font-family: 'snellregular';
+    font-size: 35px;
+}
+
 ul li a:hover{
     color: #f5b95a;
+}
+
+.home_title
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-family: 'snellregular';
+    color: black;
+
+}
+
+.video_wrapper
+{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0px;
+}
+
+.video_wrapper iframe
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 97%;
+    width: 100%;
+}
+
+#carte{
+    width: 400px;
+    height: 250px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -55,13 +126,17 @@ ul li a:hover{
         font-size: 25px;
     }
 
-    .logo img{
-        padding-left: 20%;
+    #carte{
+        width: 200px;
+        height: 200px;
     }
+
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
-    .logo img{
-        padding-left: 29%;
+
+    #carte{
+        width: 200px;
+        height: 200px;
     }
 
 }
@@ -91,7 +166,7 @@ ul li a:hover{
 
 .site-footer h6
 {
-    color:white;
+    color:#f5b95a;
     font-size:25px;
     text-transform:uppercase;
     margin-top:5px;
@@ -112,6 +187,7 @@ ul li a:hover{
 .footer-links
 {
     padding-left:0;
+    padding-top: 10px;
     list-style:none
 }
 
@@ -119,7 +195,7 @@ ul li a:hover{
 {
     font-family: Arial, Helvetica, sans-serif;
     display:block;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .footer-links.inline li
@@ -133,6 +209,7 @@ ul li a:hover{
     {
         margin-bottom:30px
     }
+
 }
 
 @media (max-width:767px)

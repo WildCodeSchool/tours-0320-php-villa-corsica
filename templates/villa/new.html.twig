@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {{ include('villa/_form.html.twig') }}
+
+    <a  class=" btn btn-success btn-lg" href="{{ path('villa_index') }}">Retour</a>
+{% endblock %}
