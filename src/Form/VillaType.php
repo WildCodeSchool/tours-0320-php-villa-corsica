@@ -19,17 +19,17 @@ class VillaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('location', TextareaType::class)
-            ->add('description', TextareaType::class)
-            ->add('nbRoom', IntegerType::class)
-            ->add('nbBed', IntegerType::class)
-            ->add('nbBathroom', IntegerType::class)
-            ->add('capacity', IntegerType::class)
-            ->add('sqm', IntegerType::class)
-            ->add('priceFrom', IntegerType::class)
+            ->add('name', TextType::class, ['label'=>'Nom de la villa'])
+            ->add('location', TextareaType::class, ['label'=>'Adresse'])
+            ->add('description', TextareaType::class, ['label'=>'Description détaillée'])
+            ->add('nbRoom', IntegerType::class, ['label'=>'Nombre de chambres'])
+            ->add('nbBed', IntegerType::class, ['label'=>'Nombre de lits'])
+            ->add('nbBathroom', IntegerType::class, ['label'=>'Nombre de salles de bain'])
+            ->add('capacity', IntegerType::class, ['label'=>'Capacité'])
+            ->add('sqm', IntegerType::class, ['label'=>'Metres carrés'])
+            ->add('priceFrom', IntegerType::class, ['label'=>'À partir de'])
             ->add('posterFile', FileType::class, [
-                'label'=>'image principale',
+                'label'=>'Image de couverture sur la liste des villas',
                 'mapped'=>false,
                 'required'=>true,
                 'constraints'=>[
@@ -40,7 +40,7 @@ class VillaType extends AbstractType
                             'image/png',
                             'image/jpg'
                         ],
-                        'mimeTypesMessage'=>'Merci de insérer un image jpg ou png'
+                        'mimeTypesMessage'=>'Veuillez insérer un image en .jpg ou .png'
                     ])
                 ]
             ])

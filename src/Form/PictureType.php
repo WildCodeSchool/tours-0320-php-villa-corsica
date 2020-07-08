@@ -18,7 +18,7 @@ class PictureType extends AbstractType
     {
         $builder
             ->add('photoFile', FileType::class, [
-                'label'=>'photo',
+                'label'=>'Ajoutez une photo depuis votre ordinateur',
                 'mapped'=>false,
                 'required'=>true,
                 'constraints'=>[
@@ -29,7 +29,7 @@ class PictureType extends AbstractType
                             'image/png',
                             'image/jpg'
                         ],
-                        'mimeTypesMessage'=>'Merci de insérer un image jpg ou png'
+                        'mimeTypesMessage'=>'Insérez une image en .jpg ou.png'
                     ])
                 ]
             ]);
