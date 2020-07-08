@@ -79,10 +79,16 @@ class Villa
      */
     private $goldenBooks;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Price::class, mappedBy="villa")
+     */
+    private $prices;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
         $this->goldenBooks = new ArrayCollection();
+        $this->prices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -266,6 +272,37 @@ class Villa
             // set the owning side to null (unless already changed)
             if ($goldenBook->getVilla() === $this) {
                 $goldenBook->setVilla(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Price[]
+     */
+    public function getPrices(): Collection
+    {
+        return $this->prices;
+    }
+
+    public function addPrice(Price $price): self
+    {
+        if (!$this->prices->contains($price)) {
+            $this->prices[] = $price;
+            $price->setVilla($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrice(Price $price): self
+    {
+        if ($this->prices->contains($price)) {
+            $this->prices->removeElement($price);
+            // set the owning side to null (unless already changed)
+            if ($price->getVilla() === $this) {
+                $price->setVilla(null);
             }
         }
 
