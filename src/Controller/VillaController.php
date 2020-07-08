@@ -64,6 +64,7 @@ class VillaController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
     
     /**
       * @IsGranted("ROLE_ADMIN")
@@ -95,7 +96,7 @@ class VillaController extends AbstractController
 
 
     /**
-     *  @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="villa_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Villa $villa): Response
@@ -111,7 +112,7 @@ class VillaController extends AbstractController
     }
 
     /**
-     *  @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="villa_new")
      */
     public function new(Request $request)

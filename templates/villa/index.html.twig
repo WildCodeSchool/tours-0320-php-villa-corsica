@@ -6,12 +6,14 @@
     <div class="cover_img">
      <img src="{{ asset('build/pages/villa/cover.jpg') }}"  alt="exemple"/>
    </div>
-   {% if is_granted('ROLE_ADMIN') %}
-<div class="btn_villa">
-<a class="btn btn-info btn-lg" href="{{ path('villa_new') }}">Ajouter une nouvelle villa</a>
-</div>
-{% endif %}
-    <h1 id="villa_list_title">Nos villas</h1>
+    <div class="villa_wrapper">
+        <div class="villa_head">
+            <h1 id="villa_list_title">Nos villas</h1>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a id="villa_add" class="btn btn-success btn-lg" href="{{ path('villa_new') }}">Ajouter une nouvelle villa</a>
+            {% endif %}
+        </div>
+    </div>
     <div class="villa_list card_containeur">
         {% for villa in villas %}
             <div class="villa_img card">
@@ -20,11 +22,6 @@
                 </div>
                 <div class="villa_infos_containeur card-body">
                 <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
-                 {% if is_granted('ROLE_ADMIN') %}
-                 <div class="btn_villa">
-                 <a class="btn btn-warning btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier la villa</a>
-                 </div>
-                 {% endif %}
                 </div>
                 <div class="svg_logo">
                     <svg class="bi bi-people-fill" width="2em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -47,6 +44,11 @@
                     <p id="sqm">{{ villa.sqm }} m² </p>
                     <p id="bed">{{ villa.nbBed }} Lits</p>
                 </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="edition_wrapper">
+                        <a id="villa_editon" class="btn btn-success btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
+                    </div>
+                {% endif %}
             </div>
         {% endfor %}
     </div>
