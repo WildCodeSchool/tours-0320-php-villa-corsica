@@ -119,7 +119,7 @@ class VillaController extends AbstractController
             $imageName=$villa->getName();
             $newFilename =$imageName.'.'.$fileEx;
             $file->move(
-                $this->getParameter('images_directory/'),
+                $this->getParameter('images_directory'),
                 $newFilename
             );
             $villa->setPoster($newFilename);
