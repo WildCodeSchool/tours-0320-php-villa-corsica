@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @Route("/admin")
@@ -21,6 +22,7 @@ class UserController extends AbstractController
      */
     public function new(
         Request $request,
+        EntityManagerInterface $manager,
         UserPasswordEncoderInterface $encoder,
         UserRepository $userRepository
     ): Response {
@@ -32,13 +34,12 @@ class UserController extends AbstractController
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
             $user->setRoles(['ROLE_ADMIN']);
             $password=$form->get('password')->getData();
             $encoded = $encoder->encodePassword($user, $password);
             $user->setPassword($encoded);
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $manager->persist($user);
+            $manager->flush();
             $this->addFlash('success', 'Votre compte a bien été enregistré,Connectez-vous sur votre compte');
             return $this->redirectToRoute('app_login');
         }
