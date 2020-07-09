@@ -60,11 +60,6 @@ class Villa
     private $sqm;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $priceFrom;
-
-    /**
      * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="villa", orphanRemoval=true)
      */
     private $pictures;
@@ -80,15 +75,14 @@ class Villa
     private $goldenBooks;
 
     /**
-     * @ORM\OneToMany(targetEntity=Price::class, mappedBy="villa")
+     * @ORM\Column(type="string", length=400)
      */
-    private $prices;
+    private $price;
 
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
         $this->goldenBooks = new ArrayCollection();
-        $this->prices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -192,18 +186,6 @@ class Villa
         return $this;
     }
 
-    public function getPriceFrom(): ?int
-    {
-        return $this->priceFrom;
-    }
-
-    public function setPriceFrom(int $priceFrom): self
-    {
-        $this->priceFrom = $priceFrom;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Picture[]
      */
@@ -278,33 +260,14 @@ class Villa
         return $this;
     }
 
-    /**
-     * @return Collection|Price[]
-     */
-    public function getPrices(): Collection
+    public function getPrice(): ?string
     {
-        return $this->prices;
+        return $this->price;
     }
 
-    public function addPrice(Price $price): self
+    public function setPrice(string $price): self
     {
-        if (!$this->prices->contains($price)) {
-            $this->prices[] = $price;
-            $price->setVilla($this);
-        }
-
-        return $this;
-    }
-
-    public function removePrice(Price $price): self
-    {
-        if ($this->prices->contains($price)) {
-            $this->prices->removeElement($price);
-            // set the owning side to null (unless already changed)
-            if ($price->getVilla() === $this) {
-                $price->setVilla(null);
-            }
-        }
+        $this->price = $price;
 
         return $this;
     }
