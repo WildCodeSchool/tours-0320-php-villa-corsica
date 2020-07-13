@@ -43,8 +43,6 @@ class VillaType extends AbstractType
                     ])
                 ]
             ])
-            ->add('price', TextType::class, ['label'=>'Tarifs'])
-         
         ;
     }
 

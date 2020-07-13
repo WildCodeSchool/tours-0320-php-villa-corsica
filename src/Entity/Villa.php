@@ -75,14 +75,15 @@ class Villa
     private $goldenBooks;
 
     /**
-     * @ORM\Column(type="string", length=400)
+     * @ORM\OneToMany(targetEntity=Rate::class, mappedBy="villa")
      */
-    private $price;
+    private $rates;
 
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
         $this->goldenBooks = new ArrayCollection();
+        $this->rates = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -260,14 +261,33 @@ class Villa
         return $this;
     }
 
-    public function getPrice(): ?string
+    /**
+     * @return Collection|Rate[]
+     */
+    public function getRates(): Collection
     {
-        return $this->price;
+        return $this->rates;
     }
 
-    public function setPrice(string $price): self
+    public function addRate(Rate $rate): self
     {
-        $this->price = $price;
+        if (!$this->rates->contains($rate)) {
+            $this->rates[] = $rate;
+            $rate->setVilla($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRate(Rate $rate): self
+    {
+        if ($this->rates->contains($rate)) {
+            $this->rates->removeElement($rate);
+            // set the owning side to null (unless already changed)
+            if ($rate->getVilla() === $this) {
+                $rate->setVilla(null);
+            }
+        }
 
         return $this;
     }

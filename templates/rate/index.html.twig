@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rate index{% endblock %}
+
+{% block content %}
+    <h1>Rate index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstPeriod</th>
+                <th>SecondPeriod</th>
+                <th>Price</th>
+                <th>Year</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rate in rates %}
+            <tr>
+                <td>{{ rate.id }}</td>
+                <td>{{ rate.firstPeriod ? rate.firstPeriod|date('Y-m-d') : '' }}</td>
+                <td>{{ rate.secondPeriod ? rate.secondPeriod|date('Y-m-d') : '' }}</td>
+                <td>{{ rate.price }}</td>
+                <td>{{ rate.year ? rate.year|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('rate_show', {'id': rate.id}) }}">show</a>
+                    <a href="{{ path('rate_edit', {'id': rate.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+{% endblock %}

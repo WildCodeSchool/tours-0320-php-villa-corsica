@@ -61,12 +61,40 @@
             <th scope="row">Superficie</th>
             <td>{{villa.sqm}}</td>
         </tr>
-        <tr>
-            <th scope="row">Tarifs</th>
-            <td>{{villa.price}}</td>
-        </tr>
     </tbody>
     </table>
+    {% for villa in villa.rates %}
+     <h2>Tarifs</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>FirstPeriod</th>
+                <td>{{ villa.firstPeriod ? villa.firstPeriod|date('Y-m') : '' }}</td>
+            </tr>
+            <tr>
+                <th>SecondPeriod</th>
+                <td>{{ villa.secondPeriod ? villa.secondPeriod|date('Y-m') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ villa.price }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ villa.year ? villa.year|date('Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+    {% if is_granted('ROLE_ADMIN') %}
+ <div class="btn_villa">
+   <a  class=" btn btn-info btn-lg" href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier les tarifs</a>
+ </div>
+ <div class="btn_villa">
+   <a  class=" btn btn-info btn-lg" href="{{ path('rate_new', {'id': villa.id}) }}">Ajouter un prix</a>
+ </div>
+  {% endif %}
+  
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>

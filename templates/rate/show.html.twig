@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rate{% endblock %}
+
+{% block content %}
+    <h1>Rate</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rate.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstPeriod</th>
+                <td>{{ rate.firstPeriod ? rate.firstPeriod|date('Y-m') : '' }}</td>
+            </tr>
+            <tr>
+                <th>SecondPeriod</th>
+                <td>{{ rate.secondPeriod ? rate.secondPeriod|date('Y-m') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ rate.price }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ rate.year ? rate.year|date('Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rate_index') }}">back to list</a>
+
+    <a href="{{ path('rate_edit', {'id': rate.id}) }}">edit</a>
+
+    {{ include('rate/_delete_form.html.twig') }}
+{% endblock %}
