@@ -91,7 +91,9 @@
             </tr>
         </tbody>
     </table>
+      {% if is_granted('ROLE_ADMIN') %}
      <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">List des tarifs</a>
+     {% endif %}
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>
