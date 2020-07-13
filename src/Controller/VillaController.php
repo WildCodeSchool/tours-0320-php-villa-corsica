@@ -75,6 +75,7 @@ class VillaController extends AbstractController
         $form = $this->createForm(VillaType::class, $villa);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            unlink($this->getParameter('images_directory').$villa->getPoster());
             $entityManager = $this->getDoctrine()->getManager();
             $file=$form->get('posterFile')->getData();
             $fileEx=$file->guessExtension();
