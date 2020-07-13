@@ -27,6 +27,11 @@
    <a  class=" btn btn-info btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>
  </div>
   {% endif %}
+   {% if is_granted('ROLE_ADMIN') %}
+ <div class="btn_villa">
+   <a  class=" btn btn-info btn-lg" href="{{ path('rate_new', {'id': villa.id})}}">Ajouter les tarifs</a>
+ </div>
+  {% endif %}
 </div>
 <div id="infosandbooking">
 <div id="leftpart">
@@ -61,12 +66,32 @@
             <th scope="row">Superficie</th>
             <td>{{villa.sqm}}</td>
         </tr>
-        <tr>
-            <th scope="row">Tarifs</th>
-            <td>{{villa.price}}</td>
-        </tr>
     </tbody>
     </table>
+     <h2>Les tarifs</h2>
+    <table class="table">
+        <tbody>
+       {% for villa in villa.rates  %}
+            <tr>
+          <td>DU {{ villa.firstPeriod ? villa.firstPeriod|date('Y-m-d') : '' }}</td>
+           <td>au  {{ villa.secondPeriod ? villa.secondPeriod|date('Y-m-d') : '' }}</td>
+           <td>{{ villa.price }}€</td>
+                <td>
+       
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+           <tr>
+                <td >arriver/départ</td>
+                <td >samedi</td>
+            </tr>
+        </tbody>
+    </table>
+     <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">List des tarifs</a>
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>
