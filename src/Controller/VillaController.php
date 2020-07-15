@@ -47,13 +47,13 @@ class VillaController extends AbstractController
                 ->from($this->getParameter('mailer_from'))
                 ->to(new Address($this->getParameter('mailer_to')))
                 ->subject('Réservation')
-            // path of the Twig template to render
+                // path of the Twig template to render
                 ->htmlTemplate('email/reservation.html.twig')
-           // pass l'object (information et villa) to the template
+                // pass l'object (information et villa) to the template
                 ->context([
-                   'booking' => $booking,
-                   'villa'=>$villa,
-                    ]);
+                    'booking' => $booking,
+                    'villa'=>$villa,
+                ]);
             $mailer->send($email);
             // the success flash message
             $this->addFlash('success', 'Votre demande de réservation a bien été envoyée');
@@ -65,9 +65,9 @@ class VillaController extends AbstractController
         ]);
     }
 
-    
+
     /**
-      * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="villa_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Villa $villa): Response
@@ -75,6 +75,7 @@ class VillaController extends AbstractController
         $form = $this->createForm(VillaType::class, $villa);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            unlink($this->getParameter('images_directory').$villa->getPoster());
             $entityManager = $this->getDoctrine()->getManager();
             $file=$form->get('posterFile')->getData();
             $fileEx=$file->guessExtension();
@@ -133,9 +134,9 @@ class VillaController extends AbstractController
             $villa->setPoster($newFilename);
             $entityManager->persist($villa);
             $entityManager->flush();
-             // the success flash message
-             $this->addFlash('success', 'Votre villa a été bien ajoutée ');
-             return $this->redirectToRoute('villa_index');
+            // the success flash message
+            $this->addFlash('success', 'Votre villa a été bien ajoutée ');
+            return $this->redirectToRoute('villa_index');
         }
 
 
