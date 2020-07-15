@@ -46,7 +46,7 @@ class VillaController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from($this->getParameter('mailer_from'))
                 ->to(new Address($this->getParameter('mailer_to')))
-                ->subject('Reservation')
+                ->subject('Réservation')
             // path of the Twig template to render
                 ->htmlTemplate('email/reservation.html.twig')
            // pass l'object (information et villa) to the template
@@ -56,7 +56,7 @@ class VillaController extends AbstractController
                     ]);
             $mailer->send($email);
             // the success flash message
-            $this->addFlash('success', 'Votre demande de réservation a été bien envoyée');
+            $this->addFlash('success', 'Votre demande de réservation a bien été envoyée');
             return $this->redirectToRoute('villa_index');
         }
         return $this->render('villa/show.html.twig', [
@@ -75,6 +75,7 @@ class VillaController extends AbstractController
         $form = $this->createForm(VillaType::class, $villa);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            unlink($this->getParameter('images_directory').$villa->getPoster());
             $entityManager = $this->getDoctrine()->getManager();
             $file=$form->get('posterFile')->getData();
             $fileEx=$file->guessExtension();

@@ -62,17 +62,7 @@ class PictureController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/{id}", name="picture_show", methods={"GET"}, requirements={"id"="\d+"})
-     */
-    public function show(Picture $picture): Response
-    {
-        return $this->render('picture/show.html.twig', [
-            'picture' => $picture,
-        ]);
-    }
-
+    
     /**
      * @Route("/{id}", name="picture_delete", methods={"DELETE"})
      */

@@ -27,7 +27,6 @@ class VillaType extends AbstractType
             ->add('nbBathroom', IntegerType::class, ['label'=>'Nombre de salles de bain'])
             ->add('capacity', IntegerType::class, ['label'=>'Capacité'])
             ->add('sqm', IntegerType::class, ['label'=>'Metres carrés'])
-            ->add('priceFrom', IntegerType::class, ['label'=>'À partir de'])
             ->add('posterFile', FileType::class, [
                 'label'=>'Image de couverture sur la liste des villas',
                 'mapped'=>false,
@@ -44,7 +43,6 @@ class VillaType extends AbstractType
                     ])
                 ]
             ])
-         
         ;
     }
 
