@@ -15,15 +15,15 @@ class RateType extends AbstractType
     {
         $builder
             ->add('firstPeriod', DateType::class, [
-                'format' => 'yyyy-MM-dd',
+                'format' => 'dd-MM-yyyy',
                 'label'=>'Du',
                 ])
             ->add('secondPeriod', DateType::class, [
-                'format' => 'yyyy-MM-dd',
-                'label'=>'Jusqu à',
+                'format' => 'dd-MM-yyyy',
+                'label'=>'Jusqu au',
                 ])
             ->add('price', MoneyType::class, [
-                'label'=>'le prix',
+                'label'=>'Prix par semaine',
             ])
         ;
     }

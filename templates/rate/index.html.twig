@@ -8,17 +8,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th>FirstPeriod</th>
-                <th>SecondPeriod</th>
-                <th>Price</th>
-                <th>actions</th>
+                <th>Période</th>
+                <th>Prix</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for rate in rates %}
             <tr>
-                <td>{{ rate.firstPeriod ? rate.firstPeriod|date('Y-m-d') : '' }}</td>
-                <td>{{ rate.secondPeriod ? rate.secondPeriod|date('Y-m-d') : '' }}</td>
+                <td>{{ rate.firstPeriod ? rate.firstPeriod|date('d-m-Y') : '' }}</td>
+                <td>{{ rate.secondPeriod ? rate.secondPeriod|date('d-m-Y') : '' }}</td>
                 <td>{{ rate.price }}</td>
                 <td>
                       <div class="btn_villa">
