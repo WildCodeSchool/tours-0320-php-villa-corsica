@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block content %}
+    <h1>Modifier les tarifs</h1>
+
+    {{ include('rate/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Liste des toutes les tarifs</a>
+
+    {{ include('rate/_delete_form.html.twig') }}
+{% endblock %}
