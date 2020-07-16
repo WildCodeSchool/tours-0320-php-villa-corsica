@@ -33,3 +33,12 @@ npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 /.vscode
+
+.DS_Store
+
+./node_modules/micromatch/lib/.DS_Store
+./node_modules/extglob/lib/.DS_Store
+./node_modules/timers-browserify/.DS_Store
+./node_modules/node-sass/src/.DS_Store
+./node_modules/csso/lib/.DS_Store
+./src/.DS_Store
