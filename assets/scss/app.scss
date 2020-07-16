@@ -8,6 +8,7 @@
 @import "service.scss";
 @import "bouton.scss";
 @import "pagehome.scss";
+@import "responsive.scss";
 
 
 @font-face {
@@ -82,8 +83,8 @@ ul li{
     font-size: 35px;
 }
 
-ul li a:hover{
-    color: #f5b95a;
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #f5b95a !important;
 }
 
 .home_title

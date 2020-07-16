@@ -19,8 +19,13 @@
              </div>
          {% endif %}
      </div>
-<nav>
-    <ul class="nav justify-content-center bg-white ">
+  <nav class="navbar justify-content-center  navbar-expand-lg navbar-light bg-white ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <div class="topnav collapse navbar-collapse" id="navbarColor03">
+    <ul class="nav  container d-flex justify-content-around bg-white  navbar-nav ">
     <li class="nav-item active">
         <a class="nav-link" href="/">Accueil</a>
       </li>
@@ -40,7 +45,9 @@
       <li class="nav-item active">
         <a class="nav-link active" href="/contact">Contact</a>
      </li>
+     
     </ul>
+    </div>
 </nav>
 {% for label, messages in app.flashes(['success', 'danger']) %}
  {% for message in messages %}
