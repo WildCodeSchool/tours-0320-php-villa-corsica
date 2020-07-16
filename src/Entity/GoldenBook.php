@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\GoldenBookRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=GoldenBookRepository::class)
@@ -29,6 +30,7 @@ class GoldenBook
 
     /**
      * @ORM\Column(type="string", length=400)
+     * @Assert\Regex("/^\w+/")
      */
     private $commentary;
 
