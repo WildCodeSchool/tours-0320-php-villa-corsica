@@ -1,6 +1,14 @@
 
 /** for telephone desktop's witdth between 250px and 425px */
 @media only screen and (max-width: 425px) and (min-width: 250px){
+    p.reservation_conditions_txt{
+        margin: 5%;
+    }
+
+    b, strong {
+        font-weight: bolder;
+        font-size: 0.8em;
+    }
     .goldForm {
         width: 100%;
         padding-left: 0;
@@ -49,6 +57,14 @@
 
 /** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
+    p.reservation_conditions_txt{
+        margin: 10%;
+    }
+    
+    b, strong {
+        font-weight: bolder;
+        font-size: 0.8em;
+    }
     .goldForm {
         width: 100%;
         padding-left: 0;
@@ -85,7 +101,14 @@
 
 /** for  desktop's witdth between 1001px and 1200px */
 @media only screen and (max-width: 1200px) and (min-width: 819px){
-
+    p.reservation_conditions_txt{
+        margin: 15%;
+    }
+    
+    b, strong {
+        font-weight: bolder;
+        font-size: 1.2em;
+    }
     .goldForm {
         width: 80%;
         display: flex;
@@ -113,7 +136,13 @@
 
 /** for telephone desktop's witdth upper 1200px */
 @media only screen and (min-width: 1200px){
-
+    p.reservation_conditions_txt{
+        margin:15%;
+    }
+    .cover_img > img {
+        width: 100%;
+        height: 50%;
+    }
     .villa_list {
        display: flex;
        justify-content: center;

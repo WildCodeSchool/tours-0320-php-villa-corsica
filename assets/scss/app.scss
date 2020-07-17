@@ -68,9 +68,8 @@ input
 }
 
 .cover_img > img{
-    width: 100%;
-    margin-top: 0;
-    height: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
