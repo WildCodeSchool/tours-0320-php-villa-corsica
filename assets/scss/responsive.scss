@@ -1,0 +1,60 @@
+
+/** for telephone desktop's witdth between 250px and 425px */
+@media only screen and (max-width: 425px) and (min-width: 250px){
+    .villa_list {
+        display: block;
+        justify-content: center;
+        
+    }
+    .villa_img {
+        width: 100%;
+        padding: 30px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+/** for tablet desktop's witdth between 801px and 1000px */
+@media only screen and (max-width: 818px) and (min-width: 426px){
+    .villa_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .villa_img {
+        width: 100%;
+        padding: 30px;
+        margin: 2%;
+    }
+
+}
+
+/** for  desktop's witdth between 1001px and 1200px */
+@media only screen and (max-width: 1200px) and (min-width: 819px){
+
+    .villa_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .villa_img {
+        width: 45%;
+        padding: 30px;
+        margin: 1%;
+    }
+
+}
+
+/** for telephone desktop's witdth upper 1200px */
+@media only screen and (min-width: 1200px){
+
+    .villa_list {
+       display: flex;
+       justify-content: center;
+    }
+    .villa_img {
+        width: 45%;
+        padding: 30px;
+        margin: 1%;
+    }
+
+}
