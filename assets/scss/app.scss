@@ -8,6 +8,7 @@
 @import "service.scss";
 @import "bouton.scss";
 @import "pagehome.scss";
+@import "responsive.scss";
 
 
 @font-face {
@@ -67,9 +68,8 @@ input
 }
 
 .cover_img > img{
-    width: 100%;
-    margin-top: 0;
-    height: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -82,8 +82,8 @@ ul li{
     font-size: 35px;
 }
 
-ul li a:hover{
-    color: #f5b95a;
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #f5b95a !important;
 }
 
 .home_title
@@ -141,7 +141,6 @@ ul li a:hover{
 }
 
 /* footer */
-
 .site-footer
 {
     background-color:#6C8F6E;
@@ -151,6 +150,8 @@ ul li a:hover{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
 
 .site-footer hr
 {
@@ -200,27 +201,4 @@ ul li a:hover{
 .footer-links.inline li
 {
     display:inline-block
-}
-
-@media (max-width:991px)
-{
-    .site-footer [class^=col-]
-    {
-        margin-bottom:30px
-    }
-
-}
-
-@media (max-width:767px)
-{
-    .site-footer
-    {
-        padding-bottom:0
-    }
-
-    .site-footer .site-footer
-    {
-        text-align:center
-    }
-
 }
