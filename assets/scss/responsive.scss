@@ -1,6 +1,14 @@
 
 /** for telephone desktop's witdth between 250px and 425px */
 @media only screen and (max-width: 425px) and (min-width: 250px){
+    a.activity_link_title {
+        font-size: 0.8em;
+    }
+
+    a.activity_link_list {
+        font-size: 0.5em;
+    }
+
     .villa_list {
         display: block;
         justify-content: center;
@@ -14,8 +22,15 @@
     }
 }
 
-/** for tablet desktop's witdth between 801px and 1000px */
+/** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
+    a.activity_link_title {
+        font-size: 0.9em;
+    }
+    a.activity_link_list {
+        font-size: 0.7em;
+    }
+
     .villa_list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -31,6 +46,12 @@
 /** for  desktop's witdth between 1001px and 1200px */
 @media only screen and (max-width: 1200px) and (min-width: 819px){
 
+    a.activity_link_title {
+        font-size: 1.1em;
+    }
+    a.activity_link_list {
+        font-size: 1em;
+    }
     .villa_list {
         display: flex;
         flex-wrap: wrap;
