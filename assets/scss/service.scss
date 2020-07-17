@@ -1,6 +1,9 @@
 .general_conditions
 {
     background-color: whitesmoke;
+    height: 100%;
+    padding-bottom: 10%;
+
 }
 
 #reservation_conditions
@@ -17,7 +20,9 @@ p.reservation_conditions_txt
     padding-top: 1em;
     font-family: Arial;
     font-size: 20px;
+    margin: 2%;
 }
+
 
 .warning
 {
