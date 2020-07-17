@@ -9,7 +9,7 @@
     <div class="commentary">
         <h2>" {{ golden_book.commentary }} "</h2>
         <h2>{{ golden_book.villa.name }}</h2>
-        <h2>{{ golden_book.name }} le: {{ golden_book.departureDate|date('d/m/y') }}</h2>
+        <h2>{{ golden_book.name }} le: {{ golden_book.departureDate}}</h2>
          {% if is_granted('ROLE_ADMIN') %}
             {{ include('golden_book/_delete_form.html.twig') }}
                         {% endif %}
