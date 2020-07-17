@@ -2,7 +2,7 @@
 /** for telephone desktop's witdth between 250px and 425px */
 @media only screen and (max-width: 425px) and (min-width: 250px){
     p.reservation_conditions_txt{
-        margin: 5%;
+        margin: 2%;
     }
 
     b, strong {
@@ -57,9 +57,7 @@
 
 /** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
-    p.reservation_conditions_txt{
-        margin: 10%;
-    }
+    
     
     b, strong {
         font-weight: bolder;
@@ -101,10 +99,7 @@
 
 /** for  desktop's witdth between 1001px and 1200px */
 @media only screen and (max-width: 1200px) and (min-width: 819px){
-    p.reservation_conditions_txt{
-        margin: 15%;
-    }
-    
+   
     b, strong {
         font-weight: bolder;
         font-size: 1.2em;
@@ -136,9 +131,7 @@
 
 /** for telephone desktop's witdth upper 1200px */
 @media only screen and (min-width: 1200px){
-    p.reservation_conditions_txt{
-        margin:15%;
-    }
+   
     .cover_img > img {
         width: 100%;
         height: 50%;
