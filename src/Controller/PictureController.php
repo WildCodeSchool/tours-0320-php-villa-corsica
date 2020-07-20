@@ -39,21 +39,20 @@ class PictureController extends AbstractController
         $form = $this->createForm(PictureType::class, $picture);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $villaName = $villa->getName();
+            $villaNewName = '';
+            if (!empty($villaName)) {
+                $villaNewName = str_replace(' ', '', $villaName);
+                $villaNewName = strtolower($villaNewName);
+            }
             $file=$form->get('photoFile')->getData();
             $fileEx=$file->guessExtension();
             $safeFileName='photo';
             $number=1;
             $newFilename=$safeFileName.$number.'.'.$fileEx;
-            while (file_exists($this->getParameter('pictures_directory').$newFilename)) {
+            while (file_exists($this->getParameter('pictures_directory') . $villaNewName . '/' . $newFilename)) {
                 $number++;
                 $newFilename=$safeFileName.$number.'.'.$fileEx;
-            }
-            $villaName = $villa->getName();
-            // Initialisation de la variable $villaNewName
-            $villaNewName = '';
-            if (!empty($villaName)) {
-                $villaNewName = str_replace(' ', '', $villaName);
-                $villaNewName = strtolower($villaNewName);
             }
             $picFolder = $currentDir . '/pictures/' . $villaNewName;
             $file->move(
