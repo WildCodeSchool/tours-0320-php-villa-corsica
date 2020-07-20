@@ -8,6 +8,7 @@ parameters:
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESS)%'
     mailer_to: '%env(resolve:MAILER_TO_ADDRESS)%'
     images_directory: '%kernel.project_dir%/public/images/'
+    posters_directory: '%kernel.project_dir%/public/images/posters/'
     pictures_directory: '%kernel.project_dir%/public/pictures/'
 
 

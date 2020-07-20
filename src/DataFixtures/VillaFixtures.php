@@ -22,7 +22,7 @@ class VillaFixtures extends Fixture
           'nb_bathroom' => '1',
           'capacity' => '4',
           'sqm' => '60',
-          'poster' => 'Laura.jpeg',
+          'poster' => 'laura.jpeg',
       ],
 
 
@@ -40,7 +40,7 @@ class VillaFixtures extends Fixture
             'nb_bathroom' => '1',
             'capacity' => '6',
             'sqm' => '90',
-            'poster' => 'Lea.jpeg',
+            'poster' => 'lea.jpeg',
         ],
 
 
@@ -56,7 +56,7 @@ class VillaFixtures extends Fixture
             'nb_bathroom' => '1',
             'capacity' => '6',
             'sqm' => '90',
-            'poster' => 'Chjara.jpeg',
+            'poster' => 'chjara.jpeg',
         ],
 
 
@@ -74,7 +74,7 @@ class VillaFixtures extends Fixture
             'nb_bathroom' => '1',
             'capacity' => '4',
             'sqm' => '60',
-            'poster' => 'Fiori 1.jpeg',
+            'poster' => 'fiori1.jpeg',
         ],
 
 
@@ -91,7 +91,7 @@ class VillaFixtures extends Fixture
             'nb_bathroom' => '1',
             'capacity' => '4',
             'sqm' => '60',
-            'poster' => 'Fiori 2.jpeg',
+            'poster' => 'fiori2.jpeg',
         ],
 
     ];
