@@ -36,9 +36,7 @@ It's symfony website-skeleton project with some additional tools to validate cod
 2. Run `yarn run dev --watch` to launch your local server for assets
 3. Create a .env.local file at the root of the project and change the file to suit your configuration
 4. Start declaring your DSN line 31 in the file (.env.local).Then You need to delete the two “#” at the beginning of the line 39 and 40 , then fill up the 2 lines with 2 email adresses.
-5. In a dev environnement load the fixtures : 
-   php bin/console doctrine:fixtures:load --group=VillaFixtures --append 
-   php bin/console doctrine:fixtures:load --group=UserFixtures --append
+
 
 ### Testing
 
