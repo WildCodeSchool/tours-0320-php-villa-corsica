@@ -109,7 +109,6 @@ class VillaController extends AbstractController
         $delete = new Filesystem();
         $currentDir = getcwd();
         $folderPath = $currentDir . '/pictures/';
-
         if ($this->isCsrfTokenValid('delete'.$villa->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             unlink($this->getParameter('posters_directory').$villa->getPoster());
