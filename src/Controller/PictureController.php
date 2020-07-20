@@ -6,7 +6,6 @@ use App\Entity\Picture;
 use App\Entity\Villa;
 use App\Form\PictureType;
 use App\Repository\PictureRepository;
-use GrumPHP\Util\Filesystem;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,7 +52,8 @@ class PictureController extends AbstractController
             // Initialisation de la variable $villaNewName
             $villaNewName = '';
             if (!empty($villaName)) {
-                $villaNewName = strtolower($villaName);
+                $villaNewName = str_replace(' ', '', $villaName);
+                $villaNewName = strtolower($villaNewName);
             }
             $picFolder = $currentDir . '/pictures/' . $villaNewName;
             $file->move(

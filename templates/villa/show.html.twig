@@ -24,7 +24,7 @@
 </div>
  {% if is_granted('ROLE_ADMIN') %}
      <div class="btn_villa">
-         <a  class=" btn btn-warning btn-lg" href="{{ path('picture_index') }}">Liste des toutes les photos</a>
+         <a  class=" btn btn-warning btn-lg" href="{{ path('picture_index') }}">Liste de toutes les photos</a>
      </div>
      <div class="btn_villa">
        <a  class=" btn btn-info btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>

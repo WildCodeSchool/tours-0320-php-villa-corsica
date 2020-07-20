@@ -82,6 +82,7 @@ class VillaController extends AbstractController
             $newFilename = '';
             if (!empty($imageName)) {
                 $newFilename = str_replace(' ', '', $imageName).'.'.$fileEx;
+                $newFilename = strtolower($newFilename);
             }
             $file->move(
                 $this->getParameter('posters_directory'),
@@ -112,7 +113,13 @@ class VillaController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$villa->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             unlink($this->getParameter('posters_directory').$villa->getPoster());
-            $delete->remove($folderPath . $villa->getName());
+            $villaName = $villa->getName();
+            $newVillaName = '';
+            if (!empty($villaName)) {
+                $villaTmpName = str_replace(' ', '', $villaName);
+                $newVillaName = strtolower($villaTmpName);
+            }
+            $delete->remove($folderPath . $newVillaName);
             $entityManager->remove($villa);
             $entityManager->flush();
         }
