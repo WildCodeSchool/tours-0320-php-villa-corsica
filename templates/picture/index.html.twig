@@ -3,14 +3,14 @@
 {% block title %}Liste des photos{% endblock %}
 
 {% block content %}
-    <h1>Liste des photos</h1>
+    <h1 id="pictures_list">Liste des photos</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Photos</th>
-                <th>Villa</th>
-                <th>actions</th>
+                <th><h3>Photos</h3></th>
+                <th><h3>Villa</h3></th>
+                <th><h3>Action</h3></th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
                     <img src="{{ picture.photo }}" width="150px"; height="150px";/>
                 </td>
                 <td>
-                    <h3>{{ picture.villa.name }}</h3>
+                    <h4>{{ picture.villa.name }}</h4>
                 </td>
                 <td>
                   {{ include('picture/_delete_form.html.twig') }}

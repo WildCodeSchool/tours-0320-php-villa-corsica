@@ -10,7 +10,7 @@
         <div class="villa_head">
             <h1 id="villa_list_title">Nos villas</h1>
             {% if is_granted('ROLE_ADMIN') %}
-                <a id="villa_add" class="btn btn-success btn-lg" href="{{ path('villa_new') }}">Ajouter une nouvelle villa</a>
+                <a id="villa_add" class="btn btn-lg" href="{{ path('villa_new') }}">Ajouter une nouvelle villa</a>
             {% endif %}
         </div>
     </div>
@@ -46,7 +46,7 @@
                 </div>
                 {% if is_granted('ROLE_ADMIN') %}
                     <div class="edition_wrapper">
-                        <a id="villa_editon" class="btn btn-success btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
+                        <a id="villa_editon" class="btn btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
                     </div>
                     <br>
                     {{ include('villa/_delete_form.html.twig') }}

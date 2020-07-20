@@ -25,7 +25,7 @@ class PictureController extends AbstractController
     public function index(PictureRepository $pictureRepository): Response
     {
         return $this->render('picture/index.html.twig', [
-            'pictures' => $pictureRepository->findAll(),
+            'pictures' => $pictureRepository->findBy([], ['photo'=>'ASC']),
         ]);
     }
 
@@ -65,7 +65,7 @@ class PictureController extends AbstractController
             $manager->persist($picture);
             $manager->flush();
             $this->addFlash('success', 'Votre photo a bien été ajouté');
-            return $this->redirectToRoute('villa_index');
+            return $this->redirectToRoute('villa_show', ['id' => $villa->getId()]);
         }
         return $this->render('picture/new.html.twig', [
             'picture' => $picture,
