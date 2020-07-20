@@ -18,7 +18,7 @@
         {% for villa in villas %}
             <div class="villa_img card">
                 <div class="img-hover-zoom">
-                    <a href="{{ path('villa_show', {'id': villa.id}) }}"><img class="villa_poster card-img-top" src="/images/{{ villa.poster }}" title="{{ villa.name }}" alt="Villa Cover Image"></a>
+                    <a href="{{ path('villa_show', {'id': villa.id}) }}"><img class="villa_poster card-img-top" src="/images/posters/{{ villa.poster }}" title="{{ villa.name }}" alt="Villa Cover Image"></a>
                 </div>
                 <div class="villa_infos_containeur card-body">
                 <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
@@ -48,6 +48,8 @@
                     <div class="edition_wrapper">
                         <a id="villa_editon" class="btn btn-success btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
                     </div>
+                    <br>
+                    {{ include('villa/_delete_form.html.twig') }}
                 {% endif %}
             </div>
         {% endfor %}

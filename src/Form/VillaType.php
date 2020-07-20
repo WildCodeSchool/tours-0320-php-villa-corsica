@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-use App\Entity\Picture;
 use App\Entity\Villa;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -12,7 +11,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Validator\Constraints\File;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class VillaType extends AbstractType
 {
