@@ -1,4 +1,5 @@
-.contactForm {
+.contactForm
+{
     margin-left: auto;
     margin-right: auto;
     background-color: #F5F5F5F5;
@@ -7,30 +8,33 @@
     border-style: inset;
     border-color: black;
     border-radius: 10px;
-
 }
 
-.fullcontainer .contactForm{
+.fullcontainer .contactForm
+{
     text-align: center;
-
 }
 
-.contactForm h2 {
+.contactForm h2
+{
     text-align: center;
     padding-top: 40px;
 }
 
-.nomprenom {
+.nomprenom
+{
     width: 100%;
     display: flex;
     text-align: center;
 }
 
-.mailmessage {
+.mailmessage
+{
     width: 100%;
 }
 
-.fullcontainer {
+.fullcontainer
+{
     background-image: url(../images/pages/contact/backgroundpagecontact.jpg);
     padding-top: 50px;
     padding-bottom: 50px;

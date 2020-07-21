@@ -1,4 +1,5 @@
-.villa_head {
+.villa_head
+{
     text-align: center;
 }
 
@@ -9,12 +10,6 @@
     padding-top: 1em;
     padding-bottom: 2em;
 }
-
-#villa_add
-{
-    font-family: "Roboto Light";
-}
-
 
 #villa_list_title
 {
@@ -58,19 +53,6 @@
 .villa_text
 {
     text-align: center;
-}
-
-.edition_wrapper
-{
-    padding-top: 1em;
-    display: flex;
-    justify-content: center;
-}
-
-#villa_editon
-{
-    text-align: center;
-    font-family: "Roboto Light";
 }
 
 .svg_logo
