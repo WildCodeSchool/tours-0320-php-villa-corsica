@@ -11,7 +11,8 @@
 @import "responsive.scss";
 
 
-@font-face {
+@font-face
+{
     font-family: 'snellregular';
     src: url('../fonts/snellbt-regular-webfont.eot');
     src: url('../fonts/snellbt-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -22,7 +23,8 @@
     font-style: normal;
 }
 
-body {
+body
+{
     background-color:$secondary;
 }
 
@@ -38,26 +40,31 @@ input
 }
 
 
-.logo img{
+.logo img
+{
     height: 150px;
 }
 
-.cover_img > img{
+.cover_img > img
+{
     max-width: 100%;
     height: 500px;
 }
 
-a {
+a
+{
     font-family: 'snellregular';
     color: $warm-color;
 }
 
-ul li{
+ul li
+{
     font-family: 'snellregular';
     font-size: 35px;
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+{
     color: #f5b95a !important;
 }
 
@@ -68,7 +75,6 @@ ul li{
     text-align: center;
     font-family: 'snellregular';
     color: black;
-
 }
 
 .video_wrapper
@@ -90,32 +96,37 @@ ul li{
     width: 100%;
 }
 
-#carte{
+#carte
+{
     width: 400px;
     height: 250px;
 }
 
 @media only screen and (max-width: 600px) {
-    ul li {
+
+    ul li
+    {
         font-size: 25px;
     }
 
-    #carte{
+    #carte
+    {
         width: 200px;
         height: 200px;
     }
-
 }
+
 @media screen and (min-width: 600px) and (max-width: 1000px) {
 
-    #carte{
+    #carte
+    {
         width: 200px;
         height: 200px;
     }
-
 }
 
 /* footer */
+
 .site-footer
 {
     background-color:#6C8F6E;
@@ -125,8 +136,6 @@ ul li{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-
 
 .site-footer hr
 {
