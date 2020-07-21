@@ -32,7 +32,6 @@ class VillaController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/{id}", name="villa_show", methods={"GET","POST"}, requirements={"id"="\d+"})
      */

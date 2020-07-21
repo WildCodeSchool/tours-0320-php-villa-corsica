@@ -23,7 +23,7 @@ class PictureType extends AbstractType
                 'required'=> true,
                 'constraints'=>[
                     new File([
-                        'maxSize'=>'2048k',
+                        'maxSize'=>'6000k',
                         'mimeTypes'=>[
                             'image/jpeg',
                             'image/png',

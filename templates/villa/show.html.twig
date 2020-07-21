@@ -119,7 +119,9 @@
                     </div>
             {{ form_rest(form) }}
                   <div class="form-group">
-                     <button class="btn bg-info text-white" >{{ button_label|default('Réserver') }}</button>
+                      <div class="btn_villa">
+                          <button class="btn btn-info btn-lg" >{{ button_label|default('Réserver') }}</button>
+                      </div>
                   </div>
              {{ form_end(form) }}
      </div>
