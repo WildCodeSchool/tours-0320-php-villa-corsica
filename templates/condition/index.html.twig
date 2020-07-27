@@ -3,51 +3,72 @@
 {% block title %}Conditions générales{% endblock %}
 
 {% block content %}
-          <div class="cover_img">
+<div class="cover_img">
         <img class="img-fluid" src="{{ asset('build/pages/services/cover.jpeg') }}"  alt="exemple"/>
-    </div>
+</div>
 <div class="general_conditions">
-    <h5 id="reservation_conditions"> <strong>Conditions de réservation</strong></h5>
+
+{# condition part  #}
+<h5 id="reservation_conditions"> <strong>Conditions de réservation</strong></h5>
+{% if is_granted('ROLE_ADMIN') %}
+    <div class="ajouter_btn">
+        <a id="villa_add" class="btn btn-lg" href="{{ path('condition_new') }}">Ajouter du contenu pour cette partie</a>
+    </div>
+{% endif %}
+{% for condition in conditions %}
+    <h5 id="conditionText">{{ condition.contentCondition }}</h5>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('condition_new') }}">Ajouter du contenu pour cette partie</a>
+        <div class="ajouter_btn">
+            <a  class="btn btn-warning btn-lg" href="{{ path('condition_edit', {'id': condition.id}) }}">Modifier</a>
+        </div>
     {% endif %}
-        {% for condition in conditions %}
-            <h5>{{ condition.contentCondition }}</h5>
-    {% if is_granted('ROLE_ADMIN') %}
-             <a href="{{ path('condition_edit', {'id': condition.id}) }}">Modifier</a>
-    {% endif %}
-        {% else %}
-            <tr>
-                <td colspan="3">Rien à afficher</td>
-            </tr>
-        {% endfor %}
-       <h2 class="warning"><strong>Attention</strong></h2>
-       {% if is_granted('ROLE_ADMIN') %}
-           <a href="{{ path('attention_new') }}">Ajouter du contenu pour cette partie</a>
-        {% endif %}
-    {% for attention in attentions %}
-                <h5>{{ attention.contentAttention }}</h5>
+
+{% else %}
+    <tr>
+         <td colspan="3">Rien à afficher</td>
+    </tr>
+{% endfor %}
+
+<hr>
+{# attention part  #}
+<h2 class="warning"><strong>Attention</strong></h2>
+{% if is_granted('ROLE_ADMIN') %}
+    <div class="ajouter_btn">
+         <a id="villa_add" class="btn btn-lg" href="{{ path('attention_new') }}">Ajouter du contenu pour cette partie</a>
+    </div>
+{% endif %}
+{% for attention in attentions %}
+    <h5 id="conditionText">{{ attention.contentAttention }}</h5>
         {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('attention_edit', {'id': attention.id}) }}">Modifier</a>
+          <div class="ajouter_btn">
+                <a class="btn btn-warning btn-lg" href="{{ path('attention_edit', {'id': attention.id}) }}">Modifier</a>
+                 </div>
          {% endif %}
-        {% else %}
-            <tr>
-                <td colspan="3">Rien à afficher</td>
-            </tr>
-        {% endfor %}
+{% else %}
+    <tr>
+        <td colspan="3">Rien à afficher</td>
+    </tr>
+{% endfor %}
+<hr>
+{# instruction part  #}
  <h2 class="warning"><strong>Consignes</strong></h2>
  {% if is_granted('ROLE_ADMIN') %}
-  <a href="{{ path('instruction_new') }}">Ajouter du contenu pour cette partie</a>
+    <div class="ajouter_btn">
+         <a  id="villa_add" class="btn btn-lg"  href="{{ path('instruction_new') }}">Ajouter du contenu pour cette partie</a>
+    </div>
   {% endif %}
-      {% for instruction in instructions %}
-           
-                <h5>{{ instruction.contentInstruction }}</h5>
-                {% if is_granted('ROLE_ADMIN') %}
-                 <a href="{{ path('instruction_edit', {'id': instruction.id}) }}">Modifier</a>
-                 {% endif %}
-        {% else %}
-            <tr>
-                <td colspan="3">Rien à afficher</td>
-            </tr>
-        {% endfor %}
+
+{% for instruction in instructions %}
+    <h5 id="conditionText">{{ instruction.contentInstruction }}</h5>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="ajouter_btn">
+                <a class="btn btn-warning btn-lg" href="{{ path('instruction_edit', {'id': instruction.id}) }}">Modifier</a>
+            </div>
+        {% endif %}
+{% else %}
+    <tr>
+        <td colspan="3">Rien à afficher</td>
+    </tr>
+{% endfor %}
+</div>
 {% endblock %}
