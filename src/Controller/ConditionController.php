@@ -12,6 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @Route("/condition")
@@ -37,16 +38,15 @@ class ConditionController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="condition_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $manager): Response
     {
         $condition = new Condition();
         $form = $this->createForm(ConditionType::class, $condition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($condition);
-            $entityManager->flush();
+            $manager->persist($condition);
+            $manager->flush();
 
             return $this->redirectToRoute('condition_index');
         }
@@ -61,13 +61,13 @@ class ConditionController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="condition_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Condition $condition): Response
+    public function edit(Request $request, Condition $condition, EntityManagerInterface $manager): Response
     {
         $form = $this->createForm(ConditionType::class, $condition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $manager->flush();
 
             return $this->redirectToRoute('condition_index');
         }
@@ -82,12 +82,11 @@ class ConditionController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="condition_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Condition $condition): Response
+    public function delete(Request $request, Condition $condition, EntityManagerInterface $manager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$condition->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($condition);
-            $entityManager->flush();
+            $manager->remove($condition);
+            $manager->flush();
         }
 
         return $this->redirectToRoute('condition_index');

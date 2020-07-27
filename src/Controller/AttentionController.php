@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -21,16 +22,15 @@ class AttentionController extends AbstractController
     /**
      * @Route("/new", name="attention_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $manager): Response
     {
         $attention = new Attention();
         $form = $this->createForm(AttentionType::class, $attention);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($attention);
-            $entityManager->flush();
+            $manager->persist($attention);
+            $manager->flush();
 
             return $this->redirectToRoute('attention_index');
         }
@@ -44,13 +44,13 @@ class AttentionController extends AbstractController
     /**
      * @Route("/{id}/edit", name="attention_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Attention $attention): Response
+    public function edit(Request $request, Attention $attention, EntityManagerInterface $manager): Response
     {
         $form = $this->createForm(AttentionType::class, $attention);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $manager->flush();
 
             return $this->redirectToRoute('attention_index');
         }
@@ -64,12 +64,11 @@ class AttentionController extends AbstractController
     /**
      * @Route("/{id}", name="attention_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Attention $attention): Response
+    public function delete(Request $request, Attention $attention, EntityManagerInterface $manager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$attention->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($attention);
-            $entityManager->flush();
+            $manager->remove($attention);
+            $manager->flush();
         }
 
         return $this->redirectToRoute('attention_index');

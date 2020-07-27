@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -21,16 +22,15 @@ class InstructionController extends AbstractController
     /**
      * @Route("/new", name="instruction_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $manager): Response
     {
         $instruction = new Instruction();
         $form = $this->createForm(InstructionType::class, $instruction);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($instruction);
-            $entityManager->flush();
+            $manager->persist($instruction);
+            $manager->flush();
 
             return $this->redirectToRoute('instruction_index');
         }
@@ -44,13 +44,13 @@ class InstructionController extends AbstractController
     /**
      * @Route("/{id}/edit", name="instruction_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Instruction $instruction): Response
+    public function edit(Request $request, Instruction $instruction, EntityManagerInterface $manager): Response
     {
         $form = $this->createForm(InstructionType::class, $instruction);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $manager->flush();
 
             return $this->redirectToRoute('instruction_index');
         }
@@ -64,12 +64,11 @@ class InstructionController extends AbstractController
     /**
      * @Route("/{id}", name="instruction_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Instruction $instruction): Response
+    public function delete(Request $request, Instruction $instruction, EntityManagerInterface $manager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$instruction->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($instruction);
-            $entityManager->flush();
+            $manager->remove($instruction);
+            $manager->flush();
         }
 
         return $this->redirectToRoute('instruction_index');

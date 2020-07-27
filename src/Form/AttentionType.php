@@ -6,13 +6,14 @@ use App\Entity\Attention;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AttentionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contentAttention')
+            ->add('contentAttention', TextareaType::class, ['label' => 'Attention'])
         ;
     }
 
