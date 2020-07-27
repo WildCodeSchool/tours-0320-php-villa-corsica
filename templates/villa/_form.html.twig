@@ -1,6 +1,12 @@
 {{ form_start(form) }}
 {{form_widget(form)}}
 <div class="btn_villa">
- <button class=" btn btn-warning btn-lg">{{ button_label|default('Créer') }}</button>
+ <button class=" btn btn-success btn-lg">{{ button_label|default('Créer') }}</button>
  </div>
 {{ form_end(form) }}
+{% block javascripts %}
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script>
+                $("input[type=file]").change(function (e){$(this).next('.custom-file-label').text(e.target.files[0].name);})
+        </script>
+{% endblock  %}

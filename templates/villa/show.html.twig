@@ -5,11 +5,11 @@
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/{{ villa.poster }}" class="d-block w-100" alt="...">
+      <img src="/images/posters/{{ villa.poster }}" class="d-block w-100" alt="...">
     </div>
      {% for villa in villa.pictures %}
     <div class="carousel-item">
-      <img src="/pictures/{{ villa.photo }}" class="d-block w-100" alt="...">
+      <img src="{{ villa.photo }}" class="d-block w-100" alt="...">
     </div>
     {% endfor %}
   </div>
@@ -23,14 +23,17 @@
   </a>
 </div>
  {% if is_granted('ROLE_ADMIN') %}
- <div class="btn_villa">
-   <a  class=" btn btn-info btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>
- </div>
-  {% endif %}
+     <div class="btn_villa">
+         <a  class=" btn btn-warning btn-lg" href="{{ path('picture_index') }}">Liste de toutes les photos</a>
+     </div>
+     <div class="btn_villa">
+       <a  class=" btn btn-info btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>
+     </div>
+ {% endif %}
 </div>
 <div id="infosandbooking">
 <div id="leftpart">
-  <h1 class="villa-title">{{ villa.name }}</h1> 
+  <h1 class="villa-title">{{ villa.name }}</h1>
     <div class="villa_description">
         <h2 class="villa-description1">Description</h2>
         <p>{{ villa.Description }}</p>
@@ -63,7 +66,36 @@
         </tr>
     </tbody>
     </table>
-    <hr>
+     <h2>Les tarifs</h2>
+    <table class="table">
+        <tbody>
+       {% for villa in villa.rates  %}
+            <tr>
+          <td>Du {{ villa.firstPeriod ? villa.firstPeriod|date('Y-m-d') : '' }}</td>
+          <td>au  {{ villa.secondPeriod ? villa.secondPeriod|date('Y-m-d') : '' }}</td>
+          <td>{{ villa.price }}€</td>
+                <td>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+           <tr>
+                <td >Arrivée et départ</td>
+                <td >Samedi</td>
+            </tr>
+        </tbody>
+    </table>
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="tarifs_wrapper">
+            <div class="btn_villa">
+                <a class="btn btn-info btn-lg" href="{{ path('rate_index') }}">Liste des tarifs</a>
+                <a  class=" btn btn-info btn-lg" href="{{ path('rate_new', {'id': villa.id})}}">Ajouter les tarifs</a>
+            </div>
+        </div>
+    {% endif %}
 </div>
     <div id="rightpart">
         <h2>Disponilibités et réservation</h2>
@@ -87,7 +119,9 @@
                     </div>
             {{ form_rest(form) }}
                   <div class="form-group">
-                     <button class="btn bg-info text-white" >{{ button_label|default('Réserver') }}</button> 
+                      <div class="btn_villa">
+                          <button class="btn btn-info btn-lg" >{{ button_label|default('Réserver') }}</button>
+                      </div>
                   </div>
              {{ form_end(form) }}
      </div>

@@ -7,11 +7,12 @@
 @import "contact.scss";
 @import "service.scss";
 @import "bouton.scss";
+@import "pagehome.scss";
+@import "responsive.scss";
 
 
-
-
-@font-face {
+@font-face
+{
     font-family: 'snellregular';
     src: url('../fonts/snellbt-regular-webfont.eot');
     src: url('../fonts/snellbt-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -22,7 +23,8 @@
     font-style: normal;
 }
 
-body {
+body
+{
     background-color:$secondary;
 }
 
@@ -37,54 +39,33 @@ input
     text-align: center;
 }
 
-.admin_wrapper
-{
-    text-align: center;
-    padding-bottom: 1em;
-}
 
-#admin
+.logo img
 {
-    font-family: 'snellregular';
-    font-size: 30px;
-    color: white;
-}
-
-#logout
-{
-    font-family: "Roboto Light";
-    font-size: 20px;
-    color: white;
-}
-
-#login
-{
-    padding-top: 1em;
-    text-align: center;
-}
-
-.logo img{
     height: 150px;
 }
 
-.cover_img > img{
-    width: 100%;
-    margin-top: 0;
+.cover_img > img
+{
+    max-width: 100%;
     height: 500px;
 }
 
-a {
+a
+{
     font-family: 'snellregular';
     color: $warm-color;
 }
 
-ul li{
+ul li
+{
     font-family: 'snellregular';
     font-size: 35px;
 }
 
-ul li a:hover{
-    color: #f5b95a;
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+{
+    color: #f5b95a !important;
 }
 
 .home_title
@@ -94,7 +75,6 @@ ul li a:hover{
     text-align: center;
     font-family: 'snellregular';
     color: black;
-
 }
 
 .video_wrapper
@@ -116,29 +96,33 @@ ul li a:hover{
     width: 100%;
 }
 
-#carte{
+#carte
+{
     width: 400px;
     height: 250px;
 }
 
 @media only screen and (max-width: 600px) {
-    ul li {
+
+    ul li
+    {
         font-size: 25px;
     }
 
-    #carte{
+    #carte
+    {
         width: 200px;
         height: 200px;
     }
-
 }
+
 @media screen and (min-width: 600px) and (max-width: 1000px) {
 
-    #carte{
+    #carte
+    {
         width: 200px;
         height: 200px;
     }
-
 }
 
 /* footer */
@@ -201,27 +185,4 @@ ul li a:hover{
 .footer-links.inline li
 {
     display:inline-block
-}
-
-@media (max-width:991px)
-{
-    .site-footer [class^=col-]
-    {
-        margin-bottom:30px
-    }
-
-}
-
-@media (max-width:767px)
-{
-    .site-footer
-    {
-        padding-bottom:0
-    }
-
-    .site-footer .site-footer
-    {
-        text-align:center
-    }
-
 }

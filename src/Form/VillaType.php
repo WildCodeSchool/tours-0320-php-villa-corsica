@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-use App\Entity\Picture;
 use App\Entity\Villa;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -12,7 +11,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Validator\Constraints\File;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class VillaType extends AbstractType
 {
@@ -27,7 +25,6 @@ class VillaType extends AbstractType
             ->add('nbBathroom', IntegerType::class, ['label'=>'Nombre de salles de bain'])
             ->add('capacity', IntegerType::class, ['label'=>'Capacité'])
             ->add('sqm', IntegerType::class, ['label'=>'Metres carrés'])
-            ->add('priceFrom', IntegerType::class, ['label'=>'À partir de'])
             ->add('posterFile', FileType::class, [
                 'label'=>'Image de couverture sur la liste des villas',
                 'mapped'=>false,
@@ -44,7 +41,6 @@ class VillaType extends AbstractType
                     ])
                 ]
             ])
-         
         ;
     }
 

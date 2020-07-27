@@ -33,3 +33,6 @@ npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 /.vscode
+
+# Ignore MAC DS_Store files
+.DS_Store

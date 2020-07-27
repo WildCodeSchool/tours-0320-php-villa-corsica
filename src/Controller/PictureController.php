@@ -25,37 +25,47 @@ class PictureController extends AbstractController
     public function index(PictureRepository $pictureRepository): Response
     {
         return $this->render('picture/index.html.twig', [
-            'pictures' => $pictureRepository->findAll(),
+            'pictures' => $pictureRepository->findBy([], ['photo'=>'ASC']),
         ]);
     }
 
-  /**
+    /**
      * @Route("/new/{id}", name="picture_new", methods={"GET","POST"})
      */
     public function new(Request $request, EntityManagerInterface $manager, Villa $villa): Response
     {
         $picture = new Picture();
+        $currentDir = getcwd();
         $form = $this->createForm(PictureType::class, $picture);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $villaName = $villa->getName();
+            $villaNewName = '';
+            if (!empty($villaName)) {
+                $villaNewName = str_replace(' ', '', $villaName);
+                $villaNewName = strtolower($villaNewName);
+            }
             $file=$form->get('photoFile')->getData();
             $fileEx=$file->guessExtension();
-            $safeFileName='corsica';
+            $safeFileName='photo';
             $number=1;
             $newFilename=$safeFileName.$number.'.'.$fileEx;
-            while (file_exists($this->getParameter('pictures_directory').$newFilename)) {
+            while (file_exists($this->getParameter('pictures_directory') . $villaNewName . '/' . $newFilename)) {
                 $number++;
                 $newFilename=$safeFileName.$number.'.'.$fileEx;
             }
+            $picFolder = $currentDir . '/pictures/' . $villaNewName;
             $file->move(
-                $this->getParameter('pictures_directory'),
+                $picFolder,
                 $newFilename
             );
-            $picture->setPhoto($newFilename);
+            $picName = '/pictures/' . $villaNewName . '/' . $newFilename;
+            $picture->setPhoto($picName);
             $picture->setVilla($villa);
             $manager->persist($picture);
             $manager->flush();
-            return $this->redirectToRoute('villa_index');
+            $this->addFlash('success', 'Votre photo a bien été ajouté');
+            return $this->redirectToRoute('villa_show', ['id' => $villa->getId()]);
         }
         return $this->render('picture/new.html.twig', [
             'picture' => $picture,
@@ -64,27 +74,20 @@ class PictureController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="picture_show", methods={"GET"}, requirements={"id"="\d+"})
-     */
-    public function show(Picture $picture): Response
-    {
-        return $this->render('picture/show.html.twig', [
-            'picture' => $picture,
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="picture_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Picture $picture): Response
     {
+        $currentFolder = getcwd();
+
         if ($this->isCsrfTokenValid('delete'.$picture->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            unlink($this->getParameter('pictures_directory').$picture->getPhoto());
+            unlink($currentFolder.$picture->getPhoto());
             $entityManager->remove($picture);
             $entityManager->flush();
         }
 
+        $this->addFlash('success', 'Votre photo a bien été supprimé');
         return $this->redirectToRoute('picture_index');
     }
 }

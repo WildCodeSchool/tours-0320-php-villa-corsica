@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter des tarifs{% endblock %}
+
+{% block content %}
+    <h4>Ajouter un nouveau tarif</h4>
+
+    {{ include('rate/_form.html.twig') }}
+
+    <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Retour à la liste</a>
+{% endblock %}
