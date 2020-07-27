@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions générales{% endblock %}
+
+{% block content %}
+          <div class="cover_img">
+        <img class="img-fluid" src="{{ asset('build/pages/services/cover.jpeg') }}"  alt="exemple"/>
+    </div>
+<div class="general_conditions">
+    <h5 id="reservation_conditions"> <strong>Conditions de réservation</strong></h5>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('condition_new') }}">Ajouter du contenu pour cette partie</a>
+    {% endif %}
+        {% for condition in conditions %}
+            <h5>{{ condition.contentCondition }}</h5>
+    {% if is_granted('ROLE_ADMIN') %}
+             <a href="{{ path('condition_edit', {'id': condition.id}) }}">Modifier</a>
+    {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="3">Rien à afficher</td>
+            </tr>
+        {% endfor %}
+       <h2 class="warning"><strong>Attention</strong></h2>
+       {% if is_granted('ROLE_ADMIN') %}
+           <a href="{{ path('attention_new') }}">Ajouter du contenu pour cette partie</a>
+        {% endif %}
+    {% for attention in attentions %}
+                <h5>{{ attention.contentAttention }}</h5>
+        {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('attention_edit', {'id': attention.id}) }}">Modifier</a>
+         {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="3">Rien à afficher</td>
+            </tr>
+        {% endfor %}
+ <h2 class="warning"><strong>Consignes</strong></h2>
+ {% if is_granted('ROLE_ADMIN') %}
+  <a href="{{ path('instruction_new') }}">Ajouter du contenu pour cette partie</a>
+  {% endif %}
+      {% for instruction in instructions %}
+           
+                <h5>{{ instruction.contentInstruction }}</h5>
+                {% if is_granted('ROLE_ADMIN') %}
+                 <a href="{{ path('instruction_edit', {'id': instruction.id}) }}">Modifier</a>
+                 {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="3">Rien à afficher</td>
+            </tr>
+        {% endfor %}
+{% endblock %}
