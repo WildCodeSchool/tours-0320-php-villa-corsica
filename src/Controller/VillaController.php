@@ -80,12 +80,8 @@ class VillaController extends AbstractController
                 $fileEx=$file->guessExtension();
                 $imageName=$villa->getName();
                 $newFilename = '';
-            }
-            if (!empty($imageName)) {
                 $newFilename = str_replace(' ', '', $imageName).'.'.$fileEx;
                 $newFilename = strtolower($newFilename);
-            }
-            if (!empty($file)) {
                 $file->move(
                     $this->getParameter('posters_directory'),
                     $newFilename
