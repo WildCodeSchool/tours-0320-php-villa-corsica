@@ -22,7 +22,7 @@ class GoldenBookController extends AbstractController
     public function index(GoldenBookRepository $goldenBookRepository): Response
     {
         return $this->render('golden_book/index.html.twig', [
-            'golden_books' => $goldenBookRepository->findAll(),
+            'golden_books' => $goldenBookRepository->findBy([], ['departureDate' => 'desc'])
         ]);
     }
 

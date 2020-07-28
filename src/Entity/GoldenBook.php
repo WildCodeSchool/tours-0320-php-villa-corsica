@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\GoldenBookRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateValidato;
 
 /**
  * @ORM\Entity(repositoryClass=GoldenBookRepository::class)

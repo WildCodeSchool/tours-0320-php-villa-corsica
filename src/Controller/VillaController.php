@@ -73,21 +73,23 @@ class VillaController extends AbstractController
         $form = $this->createForm(VillaType::class, $villa);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            unlink($this->getParameter('posters_directory').$villa->getPoster());
             $entityManager = $this->getDoctrine()->getManager();
             $file=$form->get('posterFile')->getData();
-            $fileEx=$file->guessExtension();
-            $imageName=$villa->getName();
-            $newFilename = '';
-            if (!empty($imageName)) {
-                $newFilename = str_replace(' ', '', $imageName).'.'.$fileEx;
-                $newFilename = strtolower($newFilename);
+            if (!empty($file)) {
+                unlink($this->getParameter('posters_directory').$villa->getPoster());
+                $fileEx=$file->guessExtension();
+                $imageName=$villa->getName();
+                $newFilename = '';
+                if (!empty($imageName)) {
+                    $newFilename = str_replace(' ', '', $imageName) . '.' . $fileEx;
+                    $newFilename = strtolower($newFilename);
+                }
+                $file->move(
+                    $this->getParameter('posters_directory'),
+                    $newFilename
+                );
+                $villa->setPoster($newFilename);
             }
-            $file->move(
-                $this->getParameter('posters_directory'),
-                $newFilename
-            );
-            $villa->setPoster($newFilename);
             $entityManager->flush();
             $this->addFlash('success', 'La villa a bien été mise à jour');
             return $this->redirectToRoute('villa_index');
