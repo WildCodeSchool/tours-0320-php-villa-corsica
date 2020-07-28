@@ -32,7 +32,7 @@ class InstructionController extends AbstractController
             $manager->persist($instruction);
             $manager->flush();
 
-            return $this->redirectToRoute('instruction_index');
+            return $this->redirectToRoute('condition_index');
         }
 
         return $this->render('instruction/new.html.twig', [
@@ -52,7 +52,7 @@ class InstructionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
 
-            return $this->redirectToRoute('instruction_index');
+            return $this->redirectToRoute('condition_index');
         }
 
         return $this->render('instruction/edit.html.twig', [
@@ -71,6 +71,6 @@ class InstructionController extends AbstractController
             $manager->flush();
         }
 
-        return $this->redirectToRoute('instruction_index');
+        return $this->redirectToRoute('condition_index');
     }
 }
