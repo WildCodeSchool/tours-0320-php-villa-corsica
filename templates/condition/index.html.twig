@@ -12,14 +12,14 @@
 <h5 id="reservation_conditions"> <strong>Conditions de réservation</strong></h5>
 {% if is_granted('ROLE_ADMIN') %}
     <div class="ajouter_btn">
-        <a id="villa_add" class="btn btn-lg" href="{{ path('condition_new') }}">Ajouter du contenu pour cette partie</a>
+        <a  class="btn btn-primary btn-lg" href="{{ path('condition_new') }}">Ajouter du contenu pour cette partie</a>
     </div>
 {% endif %}
 {% for condition in conditions %}
     <h5 id="conditionText">{{ condition.contentCondition }}</h5>
     {% if is_granted('ROLE_ADMIN') %}
         <div class="ajouter_btn">
-            <a  class="btn btn-warning btn-lg" href="{{ path('condition_edit', {'id': condition.id}) }}">Modifier</a>
+            <a  class="btn btn-info btn-lg" href="{{ path('condition_edit', {'id': condition.id}) }}">Modifier</a>
         </div>
     {% endif %}
 
@@ -34,14 +34,14 @@
 <h2 class="warning"><strong>Attention</strong></h2>
 {% if is_granted('ROLE_ADMIN') %}
     <div class="ajouter_btn">
-         <a id="villa_add" class="btn btn-lg" href="{{ path('attention_new') }}">Ajouter du contenu pour cette partie</a>
+         <a  class="btn btn-primary btn-lg" href="{{ path('attention_new') }}">Ajouter du contenu pour cette partie</a>
     </div>
 {% endif %}
 {% for attention in attentions %}
     <h5 id="conditionText">{{ attention.contentAttention }}</h5>
         {% if is_granted('ROLE_ADMIN') %}
           <div class="ajouter_btn">
-                <a class="btn btn-warning btn-lg" href="{{ path('attention_edit', {'id': attention.id}) }}">Modifier</a>
+                <a class="btn btn-info btn-lg" href="{{ path('attention_edit', {'id': attention.id}) }}">Modifier</a>
                  </div>
          {% endif %}
 {% else %}
@@ -54,7 +54,7 @@
  <h2 class="warning"><strong>Consignes</strong></h2>
  {% if is_granted('ROLE_ADMIN') %}
     <div class="ajouter_btn">
-         <a  id="villa_add" class="btn btn-lg"  href="{{ path('instruction_new') }}">Ajouter du contenu pour cette partie</a>
+         <a  class="btn btn-primary btn-lg"  href="{{ path('instruction_new') }}">Ajouter du contenu pour cette partie</a>
     </div>
   {% endif %}
 
@@ -62,7 +62,7 @@
     <h5 id="conditionText">{{ instruction.contentInstruction }}</h5>
         {% if is_granted('ROLE_ADMIN') %}
             <div class="ajouter_btn">
-                <a class="btn btn-warning btn-lg" href="{{ path('instruction_edit', {'id': instruction.id}) }}">Modifier</a>
+                <a class="btn btn-info btn-lg" href="{{ path('instruction_edit', {'id': instruction.id}) }}">Modifier</a>
             </div>
         {% endif %}
 {% else %}
