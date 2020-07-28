@@ -46,9 +46,9 @@
 #villa_editon
 {
     font-family: "Roboto Light";
-    background-color:#6C8F6E;
+    background-color: #f5b95a ;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .villa_update
@@ -77,6 +77,17 @@
 {
     padding-top: 1em;
     text-align: center;
+}
+
+.listing
+{
+    padding-top: 1em;
+    text-align: center;
+}
+
+.listing a
+{
+    font-family: "Roboto Light";
 }
 
 .logout a
@@ -120,3 +131,18 @@
 {
     padding-bottom: 1em;
 }
+
+/* Back to the */
+
+.back
+{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#back
+{
+    font-family: "Roboto Light";
+}
+
+
