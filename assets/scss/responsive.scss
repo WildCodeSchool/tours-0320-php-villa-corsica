@@ -69,6 +69,42 @@
         margin-top: 5%;
         margin-bottom: 5%;
     }
+
+    #infosandbooking
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #leftpart
+    {
+        width: 100%;
+        padding: auto;
+    }
+
+    #rightpart
+    {
+        width: 100%;
+        padding: auto; 
+    }
+
+    .reserve_form_ctn
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nomprenom
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactForm
+    {
+        width: 100%;
+    }
 }
 
 /** for tablet desktop's witdth between 801px and 818px */
@@ -122,6 +158,12 @@
         width: 100%;
         padding: 30px;
         margin: 2%;
+    }
+
+    .reserve_form_ctn
+    {
+        display: flex;
+        flex-direction: column;
     }
 }
 

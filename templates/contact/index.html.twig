@@ -3,10 +3,11 @@
 {% block title %}Contactez-nous{% endblock %}
 
 {% block content %}
-<div class="fullcontainer">
-   <div class="contactForm" class="mt-5">
+   <div class="fullcontainer">
+<div class="container bgimage">
+   <div class="contactForm">
                {{ form_start(form) }}
-               <h2>Contactez-nous</h2>
+               <h4>Contactez-nous</h4>
                   <div class="nomprenom">
                      <div class="col">{{ form_row(form.lastname) }}</div>
                      <div class="col">{{ form_row(form.firstname) }}</div>
@@ -21,5 +22,6 @@
                      </div>
                {{ form_end(form) }}
       </div>
-</div>   
+</div>
+</div>
    {% endblock %}
