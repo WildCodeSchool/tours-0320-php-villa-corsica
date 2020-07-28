@@ -28,7 +28,7 @@ class VillaType extends AbstractType
             ->add('posterFile', FileType::class, [
                 'label'=>'Image de couverture sur la liste des villas',
                 'mapped'=>false,
-                'required'=>true,
+                'required'=>false,
                 'constraints'=>[
                     new File([
                         'maxSize'=>'2048k',

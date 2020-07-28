@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier conditions{% endblock %}
+
+{% block content %}
+<div class="conditionNew">
+    <h1>Modifier conditions</h1>
+    <div class="villa_update">
+        {{ include('condition/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+        {{ include('condition/_delete_form.html.twig') }}
+    </div>
+    <div class="back">
+        <a id="back" class="btn btn-warning btn-lg" href="{{ path('condition_index') }}">Retour à la liste</a>
+    </div>
+</div>
+{% endblock %}

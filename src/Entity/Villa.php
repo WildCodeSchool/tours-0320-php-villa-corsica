@@ -71,7 +71,7 @@ class Villa
     private $poster;
 
     /**
-     * @ORM\OneToMany(targetEntity=GoldenBook::class, mappedBy="villa")
+     * @ORM\OneToMany(targetEntity=GoldenBook::class, mappedBy="villa", orphanRemoval=true)
      */
     private $goldenBooks;
 

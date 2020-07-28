@@ -17,7 +17,9 @@ class GoldenBookType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Prénom'])
-            ->add('departureDate', DateType::class, ['label' => 'Date de départ', 'format' => 'dd-MM-yyyy',])
+            ->add('departureDate', DateType::class, ['label' => 'Date de départ',
+            'widget' => 'choice',
+            'years' => range(date('Y'), date('2000'))])
             ->add('commentary', TextType::class, ['label' => 'Commentaire'])
             ->add('villa', EntityType::class, [
                 'class' => Villa::class,

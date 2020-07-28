@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter contenu{% endblock %}
+
+{% block content %}
+<div class="conditionNew">
+    {{ include('attention/_form.html.twig') }}
+<div class="ajouter_btn">
+    <a class="btn btn-warning btn-lg"  href="{{ path('condition_index') }}">Retour à la liste</a>
+    </div>
+    </div>
+{% endblock %}

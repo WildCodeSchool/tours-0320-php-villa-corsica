@@ -18,13 +18,25 @@
         padding-left: 0;
     }
 
+    #carouselExampleIndicators
+    {
+        width : 100%;
+        height : 200px;
+    }
+
+    .caro>img
+    {
+        width : 100%;
+        height : 200px;
+    }
+
     .golden_book_responsive
     {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-left: 10%;
-        padding-right: 10%;
+        display : flex;
+        flex-direction : column;
+        width : 100%;
+        padding-left : 10%;
+        padding-right : 10%;
     }
 
     #golden_book_departureDate
@@ -69,10 +81,58 @@
         margin-top: 5%;
         margin-bottom: 5%;
     }
+
+    #infosandbooking
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #leftpart
+    {
+        width: 100%;
+        padding: auto;
+    }
+
+    #rightpart
+    {
+        width: 100%;
+        padding: auto; 
+    }
+
+    .reserve_form_ctn
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nomprenom
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactForm
+    {
+        width: 100%;
+    }
+
+    #loisierCover
+    {
+        max-width: 100%;
+        height: 200px;
+    }
 }
 
 /** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
+    
+    #loisierCover
+    {
+        max-width: 100%;
+        height:350px;
+    }
 
     b, strong
     {
@@ -84,6 +144,19 @@
     {
         width: 100%;
         padding-left: 0;
+    }
+
+    #carouselExampleIndicators
+    {
+        width: 100%;
+        height: 400px;
+    }
+
+    .caro img
+    {
+        width: 100%;
+        height: auto;
+        background-size: contain;
     }
 
     .golden_book_responsive
@@ -123,6 +196,12 @@
         padding: 30px;
         margin: 2%;
     }
+
+    .reserve_form_ctn
+    {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /** for  desktop's witdth between 1001px and 1200px */
@@ -134,12 +213,28 @@
         font-size: 1.2em;
     }
 
-    .goldForm
+    .golden_book_responsive
     {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
-        padding-left: 20%;
+    }
+
+    #carouselExampleIndicators
+    {
+        width: 100%;
+        height: 400px;
+        background-image: url(../images/pages/contact/backgroundpagecontact.jpg);
+    }
+
+    .caro img
+    {
+        width: 80%;
+        height: 400px;
+        background-size: contain;
+        box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
+        -webkit-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
+        -moz-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
     }
 
     a.activity_link_title
@@ -165,12 +260,18 @@
         padding: 30px;
         margin: 1%;
     }
+
+    .cover_img img
+    {
+        max-width: 100%;
+        height: 10%;
+    }
 }
 
 /** for telephone desktop's witdth upper 1200px */
 @media only screen and (min-width: 1200px){
 
-    .cover_img > img
+    .cover_img img
     {
         width: 100%;
         height: 50%;
@@ -187,6 +288,23 @@
         width: 45%;
         padding: 30px;
         margin: 1%;
+    }
+
+    #carouselExampleIndicators
+    {
+        width: 100%;
+        height: 400px;
+        background-image: url(../images/pages/contact/backgroundpagecontact.jpg);
+    }
+
+    .caro img
+    {
+        width: 65%;
+        height: 400px;
+        background-size: contain;
+        box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
+        -webkit-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
+        -moz-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
     }
 
 }

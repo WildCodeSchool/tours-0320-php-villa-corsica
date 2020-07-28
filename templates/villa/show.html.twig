@@ -5,11 +5,11 @@
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/posters/{{ villa.poster }}" class="d-block w-100" alt="...">
+      <img src="/images/posters/{{ villa.poster }}" class="d-block " alt="...">
     </div>
      {% for villa in villa.pictures %}
     <div class="carousel-item">
-      <img src="{{ villa.photo }}" class="d-block w-100" alt="...">
+      <img src="{{ villa.photo }}" class="d-block " alt="...">
     </div>
     {% endfor %}
   </div>
@@ -23,14 +23,16 @@
   </a>
 </div>
  {% if is_granted('ROLE_ADMIN') %}
-     <div class="btn_villa">
-         <a  class=" btn btn-warning btn-lg" href="{{ path('picture_index') }}">Liste de toutes les photos</a>
-     </div>
-     <div class="btn_villa">
+     <div class="btn_villa ">
        <a  class=" btn btn-info btn-lg" href="{{ path('picture_new', {'id': villa.id})}}">Ajouter une nouvelle photo</a>
+     </div>
+     <div class="listing ">
+         <a  class="btn btn-primary btn-lg" href="{{ path('picture_index') }}">Liste de toutes les photos</a>
      </div>
  {% endif %}
 </div>
+<div class="container">
+<div class="container">
 <div id="infosandbooking">
 <div id="leftpart">
   <h1 class="villa-title">{{ villa.name }}</h1>
@@ -38,11 +40,8 @@
         <h2 class="villa-description1">Description</h2>
         <p>{{ villa.Description }}</p>
     </div>
-    <hr>
     <h2>Informations</h2>
-        <table class="table">
-    <thead>
-    </thead>
+        <table class="table table-hover">
     <tbody>
         <tr>
             <th scope="row">Nombre de chambres</th>
@@ -67,32 +66,29 @@
     </tbody>
     </table>
      <h2>Les tarifs</h2>
-    <table class="table">
+    <table class="table table table-hover">
         <tbody>
        {% for villa in villa.rates  %}
-            <tr>
-          <td>Du {{ villa.firstPeriod ? villa.firstPeriod|date('Y-m-d') : '' }}</td>
-          <td>au  {{ villa.secondPeriod ? villa.secondPeriod|date('Y-m-d') : '' }}</td>
-          <td>{{ villa.price }}€</td>
-                <td>
-                </td>
+           <tr>
+               <th scope="row">Du {{ villa.firstPeriod ? villa.firstPeriod|date('d/m/Y') : '' }} au  {{ villa.secondPeriod ? villa.secondPeriod|date('d/m/Y') : '' }}</th>
+               <td>{{ villa.price }}€</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun tarif trouvé</td>
             </tr>
         {% endfor %}
-           <tr>
-                <td >Arrivée et départ</td>
-                <td >Samedi</td>
-            </tr>
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}
         <div class="tarifs_wrapper">
-            <div class="btn_villa">
-                <a class="btn btn-info btn-lg" href="{{ path('rate_index') }}">Liste des tarifs</a>
+            <div class="btn_villa ">
+            <div class="mb-3">
+                <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Liste des tarifs</a>
+            </div>
+            <div class="mb-3">
                 <a  class=" btn btn-info btn-lg" href="{{ path('rate_new', {'id': villa.id})}}">Ajouter les tarifs</a>
+            </div>
             </div>
         </div>
     {% endif %}
@@ -101,19 +97,19 @@
         <h2>Disponilibités et réservation</h2>
           <div id="bookingFomr" class="mt-5" >
             {{ form_start(form) }}
-                <div class="row">
+                <div class="row reserve_form_ctn container">
                    <div class="col">{{ form_row(form.lastname) }}</div>
                     <div class="col">{{ form_row(form.firstname) }}</div>
                     </div>
-                    <div class="row">
+                    <div class="row reserve_form_ctn container">
                     <div class="col">{{ form_row(form.address) }}</div>
                     <div class="col">{{ form_row(form.email) }}</div>
                     </div>
-                    <div class="row">
+                    <div class="row reserve_form_ctn container">
                     <div class="col">{{ form_row(form.adults) }}</div>
                     <div class="col">{{ form_row(form.kids) }}</div>
                     </div>
-                    <div class="row">
+                    <div class="row reserve_form_ctn container">
                     <div class="col">{{ form_row(form.arrive) }}</div>
                     <div class="col">{{ form_row(form.departure) }}</div>
                     </div>
@@ -125,6 +121,8 @@
                   </div>
              {{ form_end(form) }}
      </div>
+</div>
+</div>
 </div>
     </div>
 {% endblock %}
