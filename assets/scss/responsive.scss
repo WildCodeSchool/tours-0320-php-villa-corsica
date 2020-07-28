@@ -117,10 +117,22 @@
     {
         width: 100%;
     }
+
+    #loisierCover
+    {
+        max-width: 100%;
+        height: 200px;
+    }
 }
 
 /** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
+    
+    #loisierCover
+    {
+        max-width: 100%;
+        height:350px;
+    }
 
     b, strong
     {
@@ -201,12 +213,11 @@
         font-size: 1.2em;
     }
 
-    .goldForm
+    .golden_book_responsive
     {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
-        padding-left: 20%;
     }
 
     #carouselExampleIndicators
@@ -249,12 +260,18 @@
         padding: 30px;
         margin: 1%;
     }
+
+    .cover_img img
+    {
+        max-width: 100%;
+        height: 10%;
+    }
 }
 
 /** for telephone desktop's witdth upper 1200px */
 @media only screen and (min-width: 1200px){
 
-    .cover_img > img
+    .cover_img img
     {
         width: 100%;
         height: 50%;
