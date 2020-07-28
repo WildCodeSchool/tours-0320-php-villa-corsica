@@ -6,10 +6,12 @@
 <div class="container text-center">
  <h4>Ajouter un nouveau tarif</h4>
 </div>
-   
+
 
     {{ include('rate/_form.html.twig') }}
     <div class="container text-center mb-3 ">
-    <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Retour à la liste</a>
+        <div class="back">
+            <a id="back" class="btn btn-warning btn-lg" href="{{ path('rate_index') }}">Retour à la liste</a>
+        </div>
     </div>
 {% endblock %}

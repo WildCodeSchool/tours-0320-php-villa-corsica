@@ -5,12 +5,13 @@
 {% block content %}
     <h1>Tarifs</h1>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Période</th>
+                <th>Du</th>
+                <th>Au</th>
                 <th>Prix</th>
-                <th>Actions</th>
+                <th>Edition</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +21,7 @@
                 <td>{{ rate.secondPeriod ? rate.secondPeriod|date('d-m-Y') : '' }}</td>
                 <td>{{ rate.price }}</td>
                 <td>
-                      <div class="btn_villa">
-                    <a class="btn btn-success btn-lg"  href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier</a>
-                    </div>
+                    <a id="villa_editon" class="btn btn-warning btn-lg"  href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
