@@ -5,11 +5,11 @@
    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/images/posters/{{ villa.poster }}" class="d-block w-100" alt="...">
+      <img src="/images/posters/{{ villa.poster }}" class="d-block " alt="...">
     </div>
      {% for villa in villa.pictures %}
     <div class="carousel-item">
-      <img src="{{ villa.photo }}" class="d-block w-100" alt="...">
+      <img src="{{ villa.photo }}" class="d-block " alt="...">
     </div>
     {% endfor %}
   </div>
@@ -84,7 +84,7 @@
         <div class="tarifs_wrapper">
             <div class="btn_villa ">
             <div class="mb-3">
-                <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Modfier les tarifs</a>
+                <a class="btn btn-primary btn-lg" href="{{ path('rate_index') }}">Liste des tarifs</a>
             </div>
             <div class="mb-3">
                 <a  class=" btn btn-info btn-lg" href="{{ path('rate_new', {'id': villa.id})}}">Ajouter les tarifs</a>

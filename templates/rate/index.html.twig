@@ -8,6 +8,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
+                <th>Villa</th>
                 <th>Du</th>
                 <th>Au</th>
                 <th>Prix</th>
@@ -17,9 +18,10 @@
         <tbody>
         {% for rate in rates %}
             <tr>
+                <td>{{ rate.villa.name }}</td> 
                 <td>{{ rate.firstPeriod ? rate.firstPeriod|date('d-m-Y') : '' }}</td>
                 <td>{{ rate.secondPeriod ? rate.secondPeriod|date('d-m-Y') : '' }}</td>
-                <td>{{ rate.price }}</td>
+                <td>{{ rate.price }} €</td>
                 <td>
                     <a id="villa_editon" class="btn btn-warning btn-lg"  href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier</a>
                 </td>
