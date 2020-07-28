@@ -32,7 +32,7 @@ class AttentionController extends AbstractController
             $manager->persist($attention);
             $manager->flush();
 
-            return $this->redirectToRoute('attention_index');
+            return $this->redirectToRoute('condition_index');
         }
 
         return $this->render('attention/new.html.twig', [
@@ -52,7 +52,7 @@ class AttentionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
 
-            return $this->redirectToRoute('attention_index');
+            return $this->redirectToRoute('condition_index');
         }
 
         return $this->render('attention/edit.html.twig', [
@@ -71,6 +71,6 @@ class AttentionController extends AbstractController
             $manager->flush();
         }
 
-        return $this->redirectToRoute('attention_index');
+        return $this->redirectToRoute('condition_index');
     }
 }
