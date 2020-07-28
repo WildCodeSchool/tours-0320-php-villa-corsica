@@ -38,12 +38,10 @@
     overflow: hidden;
 }
 
-
 .img-hover-zoom img
 {
     transition: transform 5s ease;
 }
-
 
 .img-hover-zoom:hover img
 {
@@ -69,6 +67,23 @@
     font-weight: bolder;
 }
 
+/* Containeur for the edit adn delete button*/
+
+.edition_wrapper
+{
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.delete_wrapper
+{
+    padding-bottom: 10px;
+}
+
+/* -------------------------*/
+
+
 #sqm
 {
     padding-right: 20px;
@@ -82,5 +97,3 @@
 #retour{
     margin-top: 1%;
 }
-
-

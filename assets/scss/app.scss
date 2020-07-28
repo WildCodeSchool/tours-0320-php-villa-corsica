@@ -1,14 +1,15 @@
 @import "vars";
 @import "~bootstrap/scss/bootstrap";
-@import "villaTab.scss";
-@import "villadetails.scss";
+@import "home.scss";
+@import "villaPage.scss";
+@import "villaDetails.scss";
 @import "activity.scss";
-@import "livre.scss";
+@import "goldenBook.scss";
 @import "contact.scss";
 @import "service.scss";
-@import "bouton.scss";
-@import "pagehome.scss";
+@import "buttons.scss";
 @import "responsive.scss";
+@import "crud_pages.scss";
 
 
 @font-face
@@ -23,7 +24,8 @@
     font-style: normal;
 }
 
-.custom-file-input ~ .custom-file-label:lang(fr)::after {
+.custom-file-input ~ .custom-file-label:lang(fr)::after
+{
     content: "Choisir";
 }
 
@@ -37,16 +39,39 @@ input
     text-align: center;
 }
 
+
+/* login.html.twig */
+
+#login
+{
+    padding-top: 1em;
+    text-align: center;
+}
+
+/* login.html.twig */
+
 .logo
 {
     background-color: #6C8F6E;
     text-align: center;
 }
 
-
 .logo img
 {
     height: 150px;
+}
+
+.admin_wrapper
+{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#admin
+{
+    font-family: 'snellregular';
+    font-size: 30px;
+    color: white;
 }
 
 .cover_img > img
@@ -100,38 +125,9 @@ ul li
     width: 100%;
 }
 
-#carte
-{
-    width: 400px;
-    height: 250px;
-}
+/* -------------------------------Footer----------------------------- */
 
-@media only screen and (max-width: 600px) {
-
-    ul li
-    {
-        font-size: 25px;
-    }
-
-    #carte
-    {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-
-    #carte
-    {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-/* footer */
-
-.site-footer
+.fiori-footer
 {
     background-color:#6C8F6E;
     padding:45px 0 20px;
@@ -141,18 +137,18 @@ ul li
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.site-footer hr
+.fiori-footer hr
 {
     border-top-color:#bbb;
     opacity:0.5
 }
 
-.site-footer hr.small
+.fiori-footer hr.small
 {
     margin:20px 0
 }
 
-.site-footer h6
+.fiori-footer h6
 {
     color:#f5b95a;
     font-size:25px;
@@ -161,12 +157,12 @@ ul li
     letter-spacing:2px
 }
 
-.site-footer a
+.fiori-footer a
 {
     color:white;
 }
 
-.site-footer a:hover
+.fiori-footer a:hover
 {
     color:#3366cc;
     text-decoration:none;

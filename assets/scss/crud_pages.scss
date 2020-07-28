@@ -1,0 +1,72 @@
+.form-group{
+  text-align: center;
+  padding-top: 30px;
+}
+
+/* h1 title in picture/index.html.twig */
+
+#pictures_list
+{
+  padding-top: 1em;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+/* containeur in rate/_form.html.twig-*/
+
+.btn2_ctn
+{
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+/* ------------Back buttons containeur-------------*/
+
+.back
+{
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+/* Add picture form containeur */
+
+.new_pic_form_btn
+{
+  padding-bottom: 1em;
+}
+
+/* Admin account cration in user/new.html.twig*/
+
+.formDesign
+{
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.formwidth
+{
+  border-style: inset;
+  border-color: #f5b95a;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+/* golden_book/new.html.twig */
+
+.new-page
+{
+  background-color: rgb(248, 245, 245);
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+#golden_book_title
+{
+  font-family: 'snellregular';
+  font-size: 70px;
+  text-align: center;
+}

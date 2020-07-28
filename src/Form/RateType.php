@@ -20,7 +20,7 @@ class RateType extends AbstractType
                 ])
             ->add('secondPeriod', DateType::class, [
                 'format' => 'dd-MM-yyyy',
-                'label'=>'Jusqu au',
+                'label'=>'Jusqu\' au',
                 ])
             ->add('price', MoneyType::class, [
                 'label'=>'Prix par semaine',
