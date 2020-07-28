@@ -3,13 +3,13 @@
    <div class="container" class="mt-3">
 {{ form_start(form) }}
 {{form_widget(form)}}
-<div class="btn_villa">
- <button class=" btn btn-success btn-lg">{{ button_label|default('Créer') }}</button>
- </div>
+<div class="villa_update">
+     <button id="villa_update" class=" btn btn btn-lg">{{ button_label|default('Créer') }}</button>
+</div>
 {{ form_end(form) }}
         </div>
         </div>
-</div> 
+</div>
 {% block javascripts %}
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
         <script>
