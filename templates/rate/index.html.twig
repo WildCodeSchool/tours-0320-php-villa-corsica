@@ -18,17 +18,17 @@
         <tbody>
         {% for rate in rates %}
             <tr>
-                <td>{{ rate.villa.name }}</td> 
+                <td>{{ rate.villa.name }}</td>
                 <td>{{ rate.firstPeriod ? rate.firstPeriod|date('d-m-Y') : '' }}</td>
                 <td>{{ rate.secondPeriod ? rate.secondPeriod|date('d-m-Y') : '' }}</td>
                 <td>{{ rate.price }} €</td>
                 <td>
-                    <a id="villa_editon" class="btn btn-warning btn-lg"  href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier</a>
+                    <a id="villa_edition" class="btn btn-warning btn-lg"  href="{{ path('rate_edit', {'id': rate.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun tarif trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

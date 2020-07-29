@@ -1,3 +1,13 @@
+/** Nav Bar li size*/
+
+@media only screen and (max-width: 600px) {
+
+    ul li
+    {
+        font-size: 25px;
+    }
+}
+
 /** for telephone desktop's witdth between 250px and 425px */
 @media only screen and (max-width: 425px) and (min-width: 250px){
 
@@ -82,22 +92,22 @@
         margin-bottom: 5%;
     }
 
-    #infosandbooking
+    .infos_booking
     {
         display: flex;
         flex-direction: column;
     }
 
-    #leftpart
+    .leftpart
     {
         width: 100%;
         padding: auto;
     }
 
-    #rightpart
+    .rightpart
     {
         width: 100%;
-        padding: auto; 
+        padding: auto;
     }
 
     .reserve_form_ctn
@@ -127,7 +137,7 @@
 
 /** for tablet desktop's witdth between 801px and 818px */
 @media only screen and (max-width: 818px) and (min-width: 426px){
-    
+
     #loisierCover
     {
         max-width: 100%;
@@ -186,8 +196,7 @@
 
     .villa_list
     {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: block;
     }
 
     .villa_img
@@ -306,5 +315,4 @@
         -webkit-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
         -moz-box-shadow: 0px 0px 146px 127px rgba(0,0,0,0.57);
     }
-
 }
