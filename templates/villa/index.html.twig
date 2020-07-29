@@ -4,8 +4,8 @@
 
 {% block content %}
     <div class="cover_img">
-     <img src="{{ asset('build/pages/villa/cover.jpg') }}"  alt="exemple"/>
-   </div>
+        <img src="{{ asset('build/pages/villa/cover.jpg') }}"  alt="view of the ocean"/>
+    </div>
     <div class="villa_wrapper">
         <div class="villa_head">
             <h1 id="villa_list_title">Nos villas</h1>
@@ -21,7 +21,7 @@
                     <a href="{{ path('villa_show', {'id': villa.id}) }}"><img class="villa_poster card-img-top" src="/images/posters/{{ villa.poster }}" title="{{ villa.name }}" alt="Villa Cover Image"></a>
                 </div>
                 <div class="villa_infos_containeur card-body">
-                <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
+                    <h5 class="villa_text card-text">Villa {{ villa.name }} | {{ villa.location }}</h5>
                 </div>
                 <div class="svg_logo">
                     <svg class="bi bi-people-fill" width="2em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -46,13 +46,13 @@
                 </div>
                 {% if is_granted('ROLE_ADMIN') %}
                     <div class="edition_wrapper">
-                        <a id="villa_editon" class="btn btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
+                        <a id="villa_edition" class="btn btn btn-lg" href="{{ path('villa_edit', {'id': villa.id}) }}">Modifier</a>
                     </div>
-                    <br>
-                    {{ include('villa/_delete_form.html.twig') }}
+                    <div class="delete_wrapper">
+                        {{ include('villa/_delete_form.html.twig') }}
+                    </div>
                 {% endif %}
             </div>
         {% endfor %}
     </div>
-    {#<a href="{{ path('villa_new') }}">Create new</a> #}
 {% endblock %}

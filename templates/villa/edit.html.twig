@@ -3,8 +3,8 @@
 {% block title %}Edit Villa{% endblock %}
 
 {% block content %}
-        {{ include('villa/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-          <div class="ajouter_btn">
-         <a id="villa_editon" class=" btn btn-lg" href="{{ path('villa_index') }}">Retour</a>
-         </div>
+    {{ include('villa/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    <div class="back">
+        <a id="back" class=" btn btn-lg" href="{{ path('villa_index') }}">Retour</a>
+    </div>
 {% endblock %}
