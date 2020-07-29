@@ -3,12 +3,12 @@
 {% block title %}Modifier{% endblock %}
 
 {% block content %}
-<div class="conditionNew">
-    <h1>Modifier les tarifs</h1>
-    <div class="villa_update">
-        {{ include('rate/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    <div class="conditionNew">
+        <h1>Modifier les tarifs</h1>
+        <div class="villa_update">
+            {{ include('rate/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+        </div>
     </div>
-</div>
     <div class="back">
         {{ include('rate/_delete_form.html.twig') }}
     </div>

@@ -3,10 +3,8 @@
 {% block title %}Ajouter un commentaire{% endblock %}
 
 {% block content %}
-<div class="new-page">
-<div class="titre">
-<h1>Partagez-nous votre expérience</h1>
-</div>
-{{ include('golden_book/_form.html.twig') }}
-</div>
+    <div class="new-page">
+        <h1 id="golden_book_title">Partagez votre expérience</h1>
+        {{ include('golden_book/_form.html.twig') }}
+    </div>
 {% endblock %}
