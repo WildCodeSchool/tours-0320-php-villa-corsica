@@ -186,3 +186,15 @@ ul li
 {
     display:inline-block
 }
+
+.form-inline
+{
+    display: flex;
+    justify-content: center;
+}
+
+.form-group
+{
+    text-align: center;
+    padding-top: 30px;
+}
