@@ -72,7 +72,7 @@
                         {% for villa in villa.rates  %}
                             <tr>
                                 <th scope="row">Du {{ villa.firstPeriod ? villa.firstPeriod|date('d/m/Y') : '' }} au  {{ villa.secondPeriod ? villa.secondPeriod|date('d/m/Y') : '' }}</th>
-                                <td>{{ villa.price }}€</td>
+                                <td>{{ villa.price }}€ / nuit</td>
                             </tr>
                         {% else %}
                             <tr>
